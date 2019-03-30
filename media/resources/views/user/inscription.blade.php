@@ -1,7 +1,7 @@
 @extends('layouts.nav_bar')
 @section('content')
 <h1>Inscription</h1>  
-  <form method="Post" action="user" >
+  <form method="POST" action="user" >
     {{ csrf_field() }}
     <div class="field">
         <label class="label" for="Name">Name :</label>

@@ -1,5 +1,7 @@
 
 @extends('layouts.nav_bar')
+
+
 @section('hero_container')
     
 
@@ -19,8 +21,10 @@
                             <img src="img/test.png" alt="hero image">
                         </div>
                     </div> <!-- end hero -->
-                    @endsection
-                    @section('content')  
+ @endsection
+
+
+ @section('content')  
         <div class="pr-show container">
             <h1>Mega season sale</h1>
             <div class="product-photos container">
@@ -248,6 +252,6 @@
             </ul><!-- end day-grid -->
         </div><!-- end weekdays -->
         @endsection
+
+
       
-    </body>
-</html>

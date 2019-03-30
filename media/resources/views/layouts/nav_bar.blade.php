@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
             <header>
@@ -36,7 +36,8 @@
                         
                             <div class="icon">
                             <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                            <a href="/acount"><span class="user" ><i class="fa fa-user" aria-hidden="true"></i></span></a>
+                            <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                            <a href="/user"><span class="user" ><i class="fa fa-user" aria-hidden="true"></i></span></a>
                             </div>
                     </div> <!-- end top-nav -->
                         @yield('hero_container')
