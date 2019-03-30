@@ -1,15 +1,28 @@
 
+@charset 'utf-8';
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
 
 
+//bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+//base
+@import 'base/base-dir';
+
+//variable
+@import 'abstracts/variables';
 
 
 // Layout
-@import 'layout/header';
-@import 'layout/footer';
+@import 'layout/layout-dir';
+
+
+//module
+@import 'module/module-dir.scss';
 
 
 //pages
@@ -23,10 +36,4 @@
 @import 'pages/checkout';
 
 
-//base
-@import 'base/base';
-@import 'base/typography';
-
-//variable
-@import 'abstracts/variables';
 

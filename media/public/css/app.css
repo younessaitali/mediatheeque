@@ -1,6 +1,107 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);header {
+@import url(https://fonts.googleapis.com/css?family=Nunito);html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #212121;
+}
+
+a:visited {
+  color: #212121;
+}
+
+h1,
+h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1920px;
+  margin: auto;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+.product-section-subtitle,
+.product-section-price {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+h1.stylish-heading {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+h1.stylish-heading:before,
+h1.stylish-heading:after {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 66px;
+  height: 1px;
+  background: #212121;
+  content: "";
+  display: block;
+}
+
+h1.stylish-heading:after {
+  bottom: -14px;
+  top: auto;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+header {
   background-size: cover;
-  background-color: red;
+  background-color: #f8fafc;
 }
 
 header .top-nav {
@@ -134,106 +235,5 @@ header .hero .categorys .hero-buttons {
 
 .shit {
   color: red;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: #212121;
-}
-
-a:visited {
-  color: #212121;
-}
-
-h1,
-h2 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 38px;
-  margin-bottom: 40px;
-}
-
-h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-img {
-  max-width: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.container {
-  max-width: 1920px;
-  margin: auto;
-}
-
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.6;
-}
-
-h1,
-h2,
-.product-section-subtitle,
-.product-section-price {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 38px;
-  line-height: 1.2;
-}
-
-h1.stylish-heading {
-  margin-bottom: 60px;
-  position: relative;
-}
-
-h1.stylish-heading:before,
-h1.stylish-heading:after {
-  position: absolute;
-  top: -4px;
-  left: 0;
-  width: 66px;
-  height: 1px;
-  background: #212121;
-  content: "";
-  display: block;
-}
-
-h1.stylish-heading:after {
-  bottom: -14px;
-  top: auto;
-}
-
-h2 {
-  font-size: 22px;
 }
 

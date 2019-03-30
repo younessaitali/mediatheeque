@@ -56,7 +56,7 @@
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             </ul>
                             <div class="emailBox">
-                                <label for="emailAddress">Votre adresse email</label><br>
+                                <label class="test "for="emailAddress">Votre adresse email</label><br>
                                 
                                     <input id="emailAddress" type="email" size="40" maxLength="50" required
                                          placeholder="nomutilisateur@example.com" pattern=".+@example.com">
