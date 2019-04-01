@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "product.scss"
+        "module-dir.scss"
     ],
     "names": [],
-    "file": "product.css"
+    "file": "module-dir.css"
 }

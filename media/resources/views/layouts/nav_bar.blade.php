@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
             <header>
@@ -19,9 +19,9 @@
                         <div class="logo">Mediatheque</div>
                             <div class="centre">
                             <ul><a href="/">Home</a>
-                            <div class="dropdown">
-                            <li><button class="dropbtn"><a href="/categories">Categories<span class="fa fa-caret-down" ></span></a></button></li>
-                                <div class="dropdown-content">
+                                  <div class="dropdown">
+                                  <li><button class="dropbtn"><a href="/categories">Categories<span class="fa fa-caret-down" ></span></a></button></li>
+                                     <div class="dropdown-content">
                                         <a href="/categories/movies">Movies</a>
                                         <a href="/categories/books">Books</a>
                                         <a href="/categories/magazins">Magazins</a>
@@ -36,7 +36,7 @@
                         
                             <div class="icon">
                             <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                            <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                            <a href="/cart"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
                             <a href="/user"><span class="user" ><i class="fa fa-user" aria-hidden="true"></i></span></a>
                             </div>
                     </div> <!-- end top-nav -->

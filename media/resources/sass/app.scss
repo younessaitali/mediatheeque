@@ -5,7 +5,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 
-
+//pagesss
+@import 'pages/pages-dir';
 
 //bootstrap
 //@import '~bootstrap/scss/bootstrap';
@@ -13,7 +14,7 @@
 //base
 @import 'base/base-dir';
 
-//variable
+//variables
 @import 'abstracts/variables';
 
 
@@ -23,17 +24,3 @@
 
 //module
 @import 'module/module-dir.scss';
-
-
-//pages
-@import 'pages/about';
-@import 'pages/cart';
-@import 'pages/user';
-@import 'pages/shop';
-@import 'pages/product';
-@import 'pages/my_orders';
-@import 'pages/contactus';
-@import 'pages/checkout';
-
-
-

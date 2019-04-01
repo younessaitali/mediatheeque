@@ -96,42 +96,42 @@
             
                     <div class="products text-center">
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/1.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/2.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/3.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/4.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/5.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/6.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/7.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
                         <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                            <a href="#"><img src="img/8.jpg" alt="product"></a>
                             <a href="#"><div class="product-name">MacBook Pro</div></a>
                             <div class="product-price">$2499.99</div>
                         </div>
@@ -155,23 +155,23 @@
 
         <div class="products text-center">
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/9.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book4</div></a>
                 <div class="product-price">batel$</div>
             </div>
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/5.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book3</div></a>
                 <div class="product-price">batel$</div>
             </div>
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/1.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book2</div></a>
                 <div class="product-price">batel$</div>
             </div>
             
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/4.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book</div></a>
                 <div class="product-price">batel$</div>
             </div>

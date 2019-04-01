@@ -85,4 +85,8 @@ class user_con extends Controller
     {
         //
     }
+    public function chekout()
+    {
+        return view("chekout");
+    }
 }
