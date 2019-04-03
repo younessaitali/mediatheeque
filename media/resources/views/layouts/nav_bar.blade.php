@@ -4,7 +4,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Mediatheque</title>
+        <title>Mediatheque |  @yield('title', '')</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,700" rel="stylesheet">
@@ -12,6 +12,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        
+        @yield('extra-css')
+        
     </head>
     <body>
             <header>
@@ -67,5 +70,6 @@
 
                         </div> <!-- end footer-content -->
                     </footer>
+                    @yield('extra-js')
             </body>
                 </html>
