@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\product;
 use Illuminate\Http\Request;
 
 class public_con extends Controller
 {
     public function index()
     {
-        return view("home");
+        $products = product::inRandomOrder()->take(8)->get();
+
+        return view("home")->with('products', $products);
     }
 
 
