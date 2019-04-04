@@ -1,5 +1,5 @@
-@extends('layouts.nav_bar')
+@extends('layouts.product')
 @section('content')
-<h1>Movies</h1>  
+<h1>movies </h1>  
   
 @endsection

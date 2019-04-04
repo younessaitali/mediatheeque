@@ -1,5 +1,5 @@
 @extends('layouts.product')
 @section('content')
-<h1>uguyguyg</h1>  
+<h1>journal</h1>  
   
 @endsection

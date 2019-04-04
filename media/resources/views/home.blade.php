@@ -8,10 +8,10 @@
                                 
                             <h1>Categories</h1>
                             <div class="hero-buttons">
-                                <a href="#" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
-                                <a href="#" class="button button-white"><span class="fa fa-book" ></span>Books</a>
-                                <a href="#" class="button button-white">Magazins</a>
-                                <a href="#" class="button button-white"><span class="fa  fa-newspaper-o" ></span>Journal</a>
+                                <a href="/categories/movies" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
+                                <a href="/categories/books" class="button button-white"><span class="fa fa-book" ></span>Books</a>
+                                <a href="/categories/magazins" class="button button-white">Magazins</a>
+                                <a href="/categories/journal" class="button button-white"><span class="fa  fa-newspaper-o" ></span>Journal</a>
                             </div>
                         </div> <!-- end categorys -->
                 
