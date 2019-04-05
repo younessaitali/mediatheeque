@@ -17,6 +17,8 @@
         
     </head>
     <body>
+      <div id="page-container">
+         <div id="content-wrap">
             <header>
                     <div class="top-nav container">
                         <div class="logo">Mediatheque</div>
@@ -47,7 +49,7 @@
                     
                 </header>
                 @yield('content')
-
+            </div>
                 <footer>
                         <div class="footer-content container">
                             <div class="made-with">Made with <i class="fa fa-heart"></i> by youness and sanae</div>
@@ -65,5 +67,6 @@
                         </div> <!-- end footer-content -->
                     </footer>
                     @yield('extra-js')
+                </div>
             </body>
                 </html>
