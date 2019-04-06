@@ -20,9 +20,12 @@ Route::get('/', function () {
 Route::resource('/user', 'user_con');
 Route::get('/categories', 'public_con@categories');
 
+Route::get('/chekout', 'user_con@chekout');
+ Route::get('/cart', 'public_con@cart');
  Route::get('/', 'public_con@index');
  Route::get('/about', 'public_con@about');
  Route::get('/contact', 'public_con@contact');
+ Route::get('/shop', 'public_con@shop');
  Route::get('/event', 'public_con@event');
  Route::get('/hadik', 'public_con@hadik');
  Route::get('/acount', 'public_con@acount');
