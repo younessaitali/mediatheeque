@@ -14,7 +14,7 @@ class user_con extends Controller
      */
     public function index()
     {
-        $user= users::all();
+        $user = users::all();
         return view('user.index', compact('user'));
     }
 
@@ -37,7 +37,18 @@ class user_con extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new users();
+        $user->name = request('user_name');
+        $user->email = request('user_email');
+        $user->password = request('user_password');
+        $user->adresse = request('user_adresse');
+        $user->City = request('user_city');
+        $user->Code_postale = request('user_code_p');
+        $user->Sub_id = request('user_sub_type');
+
+        $user->save();
+
+        return redirect('/');
     }
 
     /**

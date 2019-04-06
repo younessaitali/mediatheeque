@@ -89,6 +89,13 @@ class public_con extends Controller
 
     public function shop()
     {
-        return view("shop");
+        $products = product::inRandomOrder()->take(12)->get();
+
+        return view("shop")->with('products', $products);
+
+
+       
+    
     }
+
 }

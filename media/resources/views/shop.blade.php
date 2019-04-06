@@ -32,53 +32,16 @@
             </div>
 
             <div class="products text-center">
-                    <div class="product">
-        <a href=""><img src="img/books/1.jpg" alt="product"></a>
-        <a href=""><div class="product-name">Laptop 1</div></a>
-        <div class="product-price">$2132.21</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Laptop 12</div></a>
-        <div class="product-price">$2484.42</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Laptop 22</div></a>
-        <div class="product-price">$1971.70</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Desktop 1</div></a>
-        <div class="product-price">$3039.34</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Phone 2</div></a>
-        <div class="product-price">$1219.92</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Phone 4</div></a>
-        <div class="product-price">$1456.58</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Phone 8</div></a>
-        <div class="product-price">$1282.44</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Tablet 3</div></a>
-        <div class="product-price">$694.24</div>
-    </div>
-                    <div class="product">
-        <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-        <a href="#"><div class="product-name">Tablet 5</div></a>
-        <div class="product-price">$1192.00</div>
-    </div>
-            </div> <!-- end products -->
 
+                    @foreach ($products as $product )
+
+                    <div class="product">
+                            <a href=""><img src="img/books/1.jpg" alt="product"></a>
+                            <a href=""><div class="product-name">{{ $product->title}}</div></a>
+                            <div class="product-price">${{$product->price}}</div>
+                        </div><!-- end products -->
+                
+                    @endforeach
     
 @endsection
 
