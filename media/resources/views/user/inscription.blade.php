@@ -1,56 +1,41 @@
 @extends('layouts.nav_bar')
 @section('content')
-<h1>Inscription</h1>  
-  <form method="Post" action="user" >
-    {{ csrf_field() }}
-    <div class="field">
-        <label class="label" for="Name">Name :</label>
-        <div class="control">
-            <input type="text" class="input" name="name" >
-        </div>
-    </div>
-    <div class="field">
-            <label class="label" for="password">Password :</label>
-            <div class="control">
-            <input type="password" class="input" name="password">
-            </div>
-    </div>
-    <div class="field">
-            <label class="label" for="email">Email :</label>
-            <div class="control">  
-            <input type="text" class="input" name="email">
-            </div>
-    </div>
-    <div class="field">
-            <label class="label" for="adresse">adresse :</label>
-            <div class="control">
-            <input type="text" class="input" name="adresse" >
-            </div>
-    </div>
-    <div class="field">
-            <label class="label" for="city">City :</label>
-            <div class="control">
-            <input type="text" class="input" name="city">
-            </div>
-    </div>
-    <div class="field">
-            <label class="label" for="Code_postale">Code Postale :</label>
-            <div class="control">
-            <input type="number" class="input" name="Code_postale">
-            </div>
-    </div>
-    <div class="field">
-            <label class="label" for="Sub_id">Subscription type : </label>
-            <div class="control">
-            <input type="radio" name="Sub_1" value="Sub_1" >sub1<br> 
-            <input type="radio" name="Sub_1" value="Sub_1" >sub1<br> 
-            
 
-            </div>
-    </div>
-    <input class="button" type="submit" value="Submit">
-  </form>
-            
+  <form method="Post" action="/user" >
+    {{ csrf_field() }}
+    <h1>Sign Up</h1>
+    <fieldset>
+
+        <legend><span class="number">1</span>Your basic info</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+        
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password">
+
+        <label for="adresse">Adresse:</label>
+        <input type="adresse" id="adresse" name="user_adresse">
+
+        <label for="city">City:</label>
+        <input type="city" id="city" name="user_city">
+
+        <label for="code_p">Code Postale:</label>
+        <input type="code_p" id="code_p" name="user_code_p">
+    </fieldset>
+    <legend><span class="number">2</span>Subscription Field:</legend>
+    <label for="sub_type">Subscription type:</label>
+    <select id="sub_type" name="user_sub_type">
+     
+        <option value="1">Sub1</option>
+        <option value="2">Sub2</option>
+        <option value="3">Sub3</option>
+    </select>
+
+    <button type="submit">Sign Up</button>
+</form> 
             
         
 @endsection
