@@ -15,18 +15,18 @@ class CreateProductTable extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('categories_id')->foreign()->references('id')->on('categories');
+            $table->bigInteger('categories_id')->foreign()->references('id')->on('categories')->nullable();
             $table->string('title');
             $table->text('description');
             $table->json('_tags');
             $table->double('price', 8, 2);
             $table->double('promo_price', 8, 2);
-            $table->bigInteger('option_id')->foreign()->references('id')->on('option');
-            $table->integer('stars');
+            $table->bigInteger('option_id')->foreign()->references('id')->on('option')->nullable();
+            $table->integer('stars')->nullable();
             $table->integer('quantity');
-            $table->string('type');
+            $table->json('type');
             $table->boolean('disp');
-            $table->bigInteger('sim_id')->foreign()->references('id')->on('product');
+            $table->bigInteger('sim_id')->foreign()->references('id')->on('product')->nullable();
             $table->timestamps();
         });
     }

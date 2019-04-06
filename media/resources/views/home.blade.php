@@ -1,5 +1,7 @@
 
 @extends('layouts.nav_bar')
+
+
 @section('hero_container')
     
 
@@ -19,16 +21,17 @@
                             <img src="img/test.png" alt="hero image">
                         </div>
                     </div> <!-- end hero -->
-                    @endsection
-                    @section('content')  
+@endsection
+
+
+ @section('content')  
         <div class="pr-show container">
             <h1>Mega season sale</h1>
             <div class="product-photos container">
                  <div class="big-image">
-                     <img src="img/sssssds.png"></img>
+                     <img src="img/books/3.jpg"></img>
                      <div class="description"> 
                          <h2>   </h2>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                          <a href="#"><h3></h3></a>
                      </div><!-- end description -->
 
@@ -36,39 +39,39 @@
                  <div class="p_6x6 container">
                      <h2></h2>
                      <div class="photo6x6 container">
-                         <div class="photo_1">
+                         <div class="photo">
                              <a href="#">
-                                 <img src="img/sssssds.png"></img>
+                                 <img src="img/books/2.jpg"></img>
                                  <h3></h3>
                              </a>
                          </div><!-- end photo_1 -->
-                         <div class="photo_2">
+                         <div class="photo">
                                 <a href="#">
-                                        <img src="img/sssssds.png"></img>
+                                        <img src="img/books/4.jpg"></img>
                                         <h3></h3>
                                     </a>
                          </div><!-- end photo_2 -->
-                         <div class="photo_3">
+                         <div class="photo">
                                 <a href="#">
-                                        <img src="img/sssssds.png"></img>
+                                        <img src="img/books/5.jpg"></img>
                                         <h3></h3>
                                     </a>
                          </div><!-- end photo_3 -->
-                         <div class="photo_4">
+                         <div class="photo">
                                 <a href="#">
-                                        <img src="img/sssssds.png"></img>
+                                        <img src="img/books/6.jpg"></img>
                                         <h3></h3>
                                     </a>
                          </div><!-- end photo_4 -->
-                         <div class="photo_5">
+                         <div class="photo">
                                 <a href="#">
-                                        <img src="img/sssssds.png"></img>
+                                        <img src="img/books/7.jpg"></img>
                                         <h3></h3>
                                     </a>
                          </div><!-- end photo_5 -->
-                         <div class="photo_6">
+                         <div class="photo">
                                 <a href="#">
-                                        <img src="img/sssssds.png"></img>
+                                        <img src="img/books/8.jpg"></img>
                                         <h3></h3>
                                     </a>
                          </div><!-- end photo_6 -->
@@ -91,46 +94,13 @@
             
             
                     <div class="products text-center">
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
-                        <div class="product">
-                            <a href="#"><img src="img/sssssds.png" alt="product"></a>
-                            <a href="#"><div class="product-name">MacBook Pro</div></a>
-                            <div class="product-price">$2499.99</div>
-                        </div>
+                        @foreach ($products as $product )
+                              <div class="product">
+                                    <a href="#"><img src="img/books/1.jpg" alt="product"></a>
+                              <a href="#"><div class="product-name">{{ $product->title}}</div></a>
+                              <div class="product-price">{{$product->price}}$</div>
+                              </div>
+                        @endforeach
                     </div> <!-- end products -->
             
                     <div class="text-center button-container">
@@ -151,23 +121,23 @@
 
         <div class="products text-center">
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/movies/06.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book4</div></a>
                 <div class="product-price">batel$</div>
             </div>
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/movies/03.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book3</div></a>
                 <div class="product-price">batel$</div>
             </div>
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/movies/01.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book2</div></a>
                 <div class="product-price">batel$</div>
             </div>
             
             <div class="product">
-                <a href="#"><img src="img/sssssds.png" alt="product"></a>
+                <a href="#"><img src="img/movies/04.jpg" alt="product"></a>
                 <a href="#"><div class="product-name">book</div></a>
                 <div class="product-price">batel$</div>
             </div>
@@ -183,71 +153,176 @@
             </div> <!-- end featured-section -->
 
 
-        <div class="calender container">
-            <h2></h2>
-            <ul class="weekdays">
-                    <li>
-                      <abbr title="S">Sunday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="M">Monday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="T">Tuesday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="W">Wednesday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="T">Thursday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="F">Friday</abbr>
-                    </li>
-                    <li>
-                      <abbr title="S">Saturday</abbr>
-                    </li>
-            </ul><!-- end weekdays -->
-                
-            <ul class="day-grid">
-                    <li class="month=prev">29</li>
-                    <li class="month=prev">30</li>
-                    <li class="month=prev">31</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li class="month-next">1</li>
-                    <li class="month-next">2</li>
-            </ul><!-- end day-grid -->
-        </div><!-- end weekdays -->
+            <div class="caleb">
+                    <div class="ml-calendar">
+                        <section class="calendar-left">
+                            <div class="sidebar">
+                                <p class="subheading">Today</p>
+                                <h1>Tuesday, <br/>January 1st </h1>
+                                <h3 class="primary-color">4 Items</h3>
+                                <ul class="calendar-events">
+                                    <li>
+                                        <p><strong>8:00 AM</strong><br/>
+                                        Team Meeting</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>10:00 AM</strong><br/>
+                                        Call Jane</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>12:00 PM</strong><br/>
+                                        Lunch with John</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>7:00 PM</strong><br/>
+                                        Dinner with Jane</p>
+                                    </li>
+                                </ul>
+                            <p><a href="#" class="calendar-btn"><i class="fas fa-plus"></i> Add new item</a></p>
+                            </div><!-- end of  sidebar-->
+                        </section>
+                        <section class="calendar-right">
+                            <div class="calendar">
+                                <section class="calendar-header">
+                                    <h2><strong>January</strong> 2019</h2>
+                                    <div class="calendar-nav">
+                                        <a href="#"><i class="fas fa-arrow-left"></i></a><a href="#">Today</a><a href="#"><i class="fas fa-arrow-right"></i></a>&nbsp;
+                                    </div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day day-name">Mon</div>
+                                    <div class="calendar-day day-name">Tue</div>
+                                    <div class="calendar-day day-name">Wed</div>
+                                    <div class="calendar-day day-name">Thu</div>
+                                    <div class="calendar-day day-name">Fri</div>
+                                    <div class="calendar-day day-name">Sat</div>
+                                    <div class="calendar-day day-name">Sun</div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day inactive">
+                                        <span class="calendar-date">31</span>
+                                    </div>
+                                    <div class="calendar-day active">
+                                        <span class="calendar-date">1</span>
+                                        <br/><span class="calendar-event">4</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">2</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">3</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">4</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">5</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">6</span>
+                                    </div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">7</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">8</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">9</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">10</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">11</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">12</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">13</span>
+                                    </div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">14</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">15</span>
+                                        <br/><span class="calendar-event">5</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">16</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">17</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">18</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">19</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">20</span>
+                                    </div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">21</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">22</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">23</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">24</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">25</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">26</span>
+                                        <br/><span class="calendar-event">1</span>
+                                    </div>
+                                    <div class="calendar-day weekend">
+                                        <span class="calendar-date">27</span>
+                                    </div>
+                                </section>
+                                <section class="calendar-row">
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">28</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">29</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">30</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="calendar-date">31</span>
+                                        <br/><span class="calendar-event">3</span>
+                                    </div>
+                                    <div class="calendar-day inactive">
+                                        <span class="calendar-date">1</span>
+                                    </div>
+                                    <div class="calendar-day weekend inactive">
+                                        <span class="calendar-date">2</span>
+                                    </div>
+                                    <div class="calendar-day weekend inactive">
+                                        <span class="calendar-date">3</span>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div><br><br><br>
+                        <div class="clear"></div>
+                        <br><br>
         @endsection
+
+
       
-    </body>
-</html>
