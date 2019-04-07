@@ -96,7 +96,7 @@
                     <div class="products text-center">
                         @foreach ($products as $product )
                               <div class="product">
-                                    <a href="#"><img src="img/books/1.jpg" alt="product"></a>
+                                    <a href="#"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
                               <a href="#"><div class="product-name">{{ $product->title}}</div></a>
                               <div class="product-price">{{$product->price}}$</div>
                               </div>
@@ -120,28 +120,16 @@
 
 
         <div class="products text-center">
+
+                @foreach ($_products as $product )
+
             <div class="product">
-                <a href="#"><img src="img/movies/06.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book4</div></a>
-                <div class="product-price">batel$</div>
+                <a href="#"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                <a href="#"><div class="product-name">{{ $product->title}}</div></a>
+                <div class="product-price">{{ $product->title}}$</div>
             </div>
-            <div class="product">
-                <a href="#"><img src="img/movies/03.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book3</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            <div class="product">
-                <a href="#"><img src="img/movies/01.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book2</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            
-            <div class="product">
-                <a href="#"><img src="img/movies/04.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            
+           
+            @endforeach
         </div> <!-- end products -->
 
         <div class="text-center button-container">

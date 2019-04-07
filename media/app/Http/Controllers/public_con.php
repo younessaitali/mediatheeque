@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\product;
+use App\products;
 use Illuminate\Http\Request;
 
 class public_con extends Controller
 {
     public function index()
     {
-        $products = product::inRandomOrder()->take(8)->get();
 
-        return view("home")->with('products', $products);
+        $products = products::inRandomOrder()->take(8)->get();
+        $_products = products::inRandomOrder()->take(4)->get();
+
+        return view("home")->with('products', $products)->with('_products', $_products);
     }
 
 
@@ -44,7 +46,7 @@ class public_con extends Controller
         return view("hadik");
     }
 
-    
+
     public function acount()
     {
         return view("acount");
@@ -89,13 +91,18 @@ class public_con extends Controller
 
     public function shop()
     {
-        $products = product::inRandomOrder()->take(12)->get();
+        $products = products::inRandomOrder()->take(12)->get();
 
         return view("shop")->with('products', $products);
-
-
-       
-    
     }
 
+
+
+    public function test()
+    {
+        $products = products::inRandomOrder()->take(12)->get();
+
+
+        return view("test")->with('products', $products);
+    }
 }
