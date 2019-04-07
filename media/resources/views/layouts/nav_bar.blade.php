@@ -41,7 +41,7 @@
                         
                             <div class="icon">
                             <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                            <a href="/cart"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                            <a href="/cart"><span class="search" ><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
                             <a href="/user"><span class="user" ><i class="fa fa-user" aria-hidden="true"></i></span></a>
                             </div>
                     </div> <!-- end top-nav -->

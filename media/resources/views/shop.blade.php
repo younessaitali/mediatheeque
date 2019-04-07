@@ -36,8 +36,8 @@
                     @foreach ($products as $product )
 
                     <div class="product">
-                            <a href=""><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
-                            <a href=""><div class="product-name">{{ $product->title}}</div></a>
+                    <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                            <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
                             <div class="product-price">${{$product->price}}</div>
                         </div><!-- end products -->
                       
