@@ -5,7 +5,7 @@ header{
     .top-nav{
         display: flex;
         justify-content: space-between;
-        padding:60px 0;
+        padding:5px 0;
         align-items: flex-start;
        
         .logo{
@@ -50,6 +50,7 @@ header{
           }
           .dropdown-content a:hover {
             background-color: #ddd;
+            
           }
           
           .dropdown:hover .dropdown-content {

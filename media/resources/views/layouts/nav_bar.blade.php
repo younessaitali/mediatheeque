@@ -21,7 +21,7 @@
          <div id="content-wrap">
             <header>
                     <div class="top-nav container">
-                        <div class="logo">Mediatheque</div>
+                        <div class="logo"><a href="/">Mediatheque</a></div>
                             <div class="centre">
                             <ul><a href="/">Home</a>
                                   <div class="dropdown">
@@ -50,23 +50,24 @@
                 </header>
                 @yield('content')
             </div>
-                <footer>
-                        <div class="footer-content container">
-                            <div class="made-with">Made with <i class="fa fa-heart"></i> by youness and sanae</div>
-                        
-                            <div class="emailBox">
-                                <label class="test "for="emailAddress">Votre adresse email</label><br>
-                                
-                                    <input id="emailAddress" type="email" size="40" maxLength="50" required
-                                         placeholder="nomutilisateur@example.com" pattern=".+@example.com">
-                                         <span class="emailAddress"><i class="fa fa-envelope-o fa-fw"aria-hidden="true"></i></span>
-                                              
-                                        
-                            </div>
-
-                        </div> <!-- end footer-content -->
-                    </footer>
+              
                     @yield('extra-js')
                 </div>
+                <footer>
+                    <div class="footer-content container">
+                        <div class="made-with">Made with <i class="fa fa-heart"></i> by youness and sanae</div>
+                    
+                        <div class="emailBox">
+                            <label class="test "for="emailAddress">Votre adresse email</label><br>
+                            
+                                <input id="emailAddress" type="email" size="40" maxLength="50" required
+                                     placeholder="nomutilisateur@example.com" pattern=".+@example.com">
+                                     <span class="emailAddress"><i class="fa fa-envelope-o fa-fw"aria-hidden="true"></i></span>
+                                          
+                                    
+                        </div><!-- end email-box -->
+
+                    </div> <!-- end footer-content -->
+                </footer>
             </body>
                 </html>

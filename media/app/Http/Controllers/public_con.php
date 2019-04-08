@@ -83,10 +83,7 @@ class public_con extends Controller
     }
 
 
-    public function cart()
-    {
-        return view("cart");
-    }
+
 
 
     public function shop()
