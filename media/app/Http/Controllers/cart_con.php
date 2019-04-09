@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use App\products;
 
 class cart_con extends Controller
 {
@@ -36,7 +37,9 @@ class cart_con extends Controller
     public function store(Request $request)
     {
         Cart::add($request->id, $request->title, 1, $request->price)
-            ->associate('App\product');
+            ->associate('App\products');
+
+        return redirect()->route('cart.index');
     }
 
     /**
@@ -81,6 +84,7 @@ class cart_con extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+        return back();
     }
 }

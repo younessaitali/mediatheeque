@@ -22,7 +22,7 @@
         </div> <!-- end sidebar -->
         <div>
             <div class="products-header">
-                    <h1 class="stylish-heading">Featured</h1>
+                    <h1 class="stylish-heading">Shop</h1>
                 <div>
                     <strong>Price: </strong>
                     <a href="#">Low to High</a> 

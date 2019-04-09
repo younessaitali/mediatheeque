@@ -16,22 +16,23 @@ class ProductsTableSeeder extends Seeder
         for ($i = 1; $i <= 9; $i++) {
             Products::create([
                 'title' => 'Boook ' . $i,
-                'description' => 'this book is amazing by it now-' . $i,
-                '_tags' => '{
-                            "img_path":["/img/books/' . $i . '.jpg"],
-                            "auth":"auth' . $i . '" ,
-                            "genre":"genre' . $i . '"
-                                }',
+                'description' => 'this book is amazing buy it now-' . $i,
+                '_tags' => [
+                    "img_path" => ["/img/books/" . $i . ".jpg"],
+                    "auth" => "auth" . $i,
+                    "genre" => "genre" . $i
+                ],
 
                 'price' => rand(0, 249999),
                 'promo_price' => rand(0, 249999),
                 'stars' => 2,
+                'categories_id' => 2,
                 'quantity' => rand(0, 200),
-                'type' => '{
-                    "audiobook": {"price":"123","promo_price":"123"},
-                    "Digital": {"price":"222","promo_price":"222"},
-                    "hardcover": {"price":"33","promo_price":"333"}
-                  }',
+                'type' => [
+                    "audiobook" => ["price" => "123", "promo_price" => "123"],
+                    "Digital" =>  ["price" => "222", "promo_price" => "222"],
+                    "hardcover" =>  ["price" => "33", "promo_price" => "333"]
+                ],
                 'disp' => rand(true, false),
 
 
@@ -42,20 +43,22 @@ class ProductsTableSeeder extends Seeder
             Products::create([
                 'title' => 'Movie ' . $i,
                 'description' => 'this movie is amazing by it now-' . $i,
-                '_tags' => '{
-                            "img_path":["/img/movies/' . $i . '.jpg"],
-                            "auth":"auth' . $i . '" ,
-                            "genre":"genre' . $i . '"
-                                }',
+                '_tags' => [
+                    "img_path" => ["/img/movies/" . $i . ".jpg"],
+                    "auth" => "auth" . $i,
+                    "genre" => "genre" . $i
+                ],
+
 
                 'price' => rand(0, 249999),
                 'promo_price' => rand(0, 249999),
                 'quantity' => rand(0, 200),
-                'type' => '{
-                    "audiobook": {"price":"123","promo_price":"123"},
-                    "Digital": {"price":"222","promo_price":"222"},
-                    "hardcover": {"price":"33","promo_price":"333"}
-                  }',
+                'categories_id' => 1,
+                'stars' => 2,
+                'type' => [
+                    "Digital" =>  ["price" => "222", "promo_price" => "222"],
+                    "physical" =>  ["price" => "33", "promo_price" => "333"]
+                ],
                 'disp' => rand(true, false),
 
 
