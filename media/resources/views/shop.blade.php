@@ -14,10 +14,10 @@
         <div class="sidebar">
             <h3>By Category</h3>
             <ul>
-                <li class="Movies"><a href="#">Movies</a></li>
-                <li class="Movies"><a href="#">BOOKs</a></li>
-                <li class="Movies"><a href="#">Journal</a></li>
-                <li class="Movies"><a href="#">Magazins</a></li>
+                <li class="Movies"><a href="{{route('movies')}}">Movies</a></li>
+                <li class="Movies"><a href="{{route('books')}}">Books</a></li>
+                <li class="Movies"><a href="{{route('journal')}}">Journal</a></li>
+                <li class="Movies"><a href="{{route('magazins')}}">Magazins</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div>

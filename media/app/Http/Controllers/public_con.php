@@ -55,20 +55,22 @@ class public_con extends Controller
 
     public function books()
     {
-        return view("books");
+        $products = products::where('categories_id', 2)->inRandomOrder()->take(9)->get();
+
+
+        return view("books")->with('products', $products);
     }
 
 
     public function movies()
     {
-        return view("movies");
+        $products = products::where('categories_id', 1)->inRandomOrder()->take(12)->get();
+
+        return view("movies")->with('products', $products);
     }
 
 
-    public function inscription()
-    {
-        return view("inscription");
-    }
+
 
 
     public function magazins()
@@ -79,6 +81,9 @@ class public_con extends Controller
 
     public function journal()
     {
+
+        $products = products::inRandomOrder()->take(12)->get();
+
         return view("journal");
     }
 

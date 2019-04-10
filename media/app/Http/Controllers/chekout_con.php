@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Http\Request;
-use App\products;
 
-class cart_con extends Controller
+use Illuminate\Http\Request;
+
+class chekout_con extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class cart_con extends Controller
      */
     public function index()
     {
-        return view("cart");
+        return view('chekout');
     }
 
     /**
@@ -36,18 +35,7 @@ class cart_con extends Controller
      */
     public function store(Request $request)
     {
-        $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
-            return $cartItem->id === $request->id;
-        });
-
-        if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index');
-        }
-
-        Cart::add($request->id, $request->title, 1, $request->price)
-            ->associate('App\products');
-
-        return redirect()->route('cart.index');
+        //
     }
 
     /**
@@ -92,7 +80,6 @@ class cart_con extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-        return back();
+        //
     }
 }

@@ -29,9 +29,16 @@
                             <button type="submit" class="cart-options">Remove</button>
                         </form>
   
-                        <form action="" method="POST">
-                            <!--  + crcsf-->
+                    
   
+
+                            <form action="{{ route('wish.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{$item->model->id}}">
+                            <input type="hidden" name="title" value="{{$item->model->title}}">
+                            <input type="hidden" name="price" value="{{$item->model->price}}">
+
+
                             <button type="submit" class="cart-options">Save for Later</button>
                         </form>
                     </div>
@@ -50,6 +57,34 @@
                        
              @endforeach
         </div> <!-- end cart-table -->
+
+
+
+        <div class="cart-totals">
+                <div class="cart-totals-left">
+                    Shipping is free
+                </div>
+
+                <div class="cart-totals-right">
+                    <div>
+                        Subtotal <br>
+                     
+                        <!--!!!!!-->
+
+                        Tax (%)<br>
+                        <span class="cart-totals-total">Total</span>
+                    </div>
+                    <div class="cart-totals-subtotal">
+                        ${{ Cart::subtotal() }} <br>
+                        ${{Cart::tax()}}<br>
+                        <span class="cart-totals-total">${{ Cart::total() }}</span>
+                    </div>
+                </div>
+            </div> <!-- end cart-totals -->
+
+
+
+
   
         <div class="cart-buttons">
         <a href="{{route('shop.index')}}" class="button">Continue Shopping</a>
@@ -70,7 +105,7 @@
   
         
         
-        <h3>You have no items Saved for Later.</h3>
+        
   
         
     </div>
