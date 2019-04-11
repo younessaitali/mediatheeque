@@ -2,11 +2,8 @@
     display: grid;
     justify-content: space-around;
     grid-template-columns: 1fr 4fr;
-    grid-gap: 100px;
-    grid-row-gap: 15px;
-
-    padding-top: 20px;
-    padding-bottom: 84px;
+    grid-gap: 40px;
+    grid-template-rows: 720px;
     
     .ac-image{
         
@@ -16,6 +13,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
         h1{
             color: #FF2162;
         }
@@ -38,6 +36,7 @@
 
 .pr-show {
     display: grid;
+    grid-template-rows: 1fr 8fr;
             h1{
                 text-align: center;
             }
@@ -45,18 +44,19 @@
             .product-photos{
 
                 display: grid;
-                grid-template-columns: 2fr 2fr ;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 2fr 3fr ;
+                grid-template-rows: 1fr ;
                 grid-gap: 20px 20px ;
-                  
+                align-items: center;
                 .big-image{
 
-
+                   align-content: center;
 
                 }
                 .p_6x6{
                     display: grid;
                     grid-template-rows: 1fr 5fr;    
+                    align-items: center;
                     .photo6x6{
                         
                         display: grid;
