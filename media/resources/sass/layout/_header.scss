@@ -5,7 +5,7 @@ header{
     .top-nav{
         display: flex;
         justify-content: space-between;
-        padding:60px 0;
+        padding:5px 0;
         align-items: flex-start;
        
         .logo{
@@ -50,6 +50,7 @@ header{
           }
           .dropdown-content a:hover {
             background-color: #ddd;
+            
           }
           
           .dropdown:hover .dropdown-content {
@@ -74,7 +75,25 @@ header{
             justify-content: space-between;
             align-items: flex-end;
             width: 15%;
+            .cart-count {
+              display: inline-block;
+         
+             
+              color: #116ac4;
+              line-height: 0;
+              border-radius: 50%;
+              font-size: 20px;
+    
+              span {
+                display: inline-block;
+                padding-top: 50%;
+                padding-bottom: 50%;
+                margin-left:6px;
+                margin-right:6px;
+              }
+            
         }
+      }
         a{
             margin-left: 0%;
             color: black;

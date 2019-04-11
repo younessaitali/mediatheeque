@@ -16,25 +16,23 @@
 Route::get('/', function () {
     return view('welcome');
 });*/
-
+Route::resource('/chekout', 'chekout_con');
+Route::resource('/wish', 'wish_con');
+Route::get('/test', 'public_con@test');
+Route::resource('/product', 'products_con');
 Route::resource('/user', 'user_con');
 Route::get('/categories', 'public_con@categories');
+Route::resource('/cart', 'cart_con');
+Route::get('/', 'public_con@index');
+Route::get('/about', 'public_con@about');
+Route::get('/contact', 'public_con@contact');
+Route::get('/shop', 'public_con@shop')->name('shop.index');
+Route::get('/event', 'public_con@event');
+Route::get('/hadik', 'public_con@hadik');
+Route::get('/acount', 'public_con@acount');
+Route::get('/categories/movies', 'public_con@movies')->name('movies');
+Route::get('/categories/books', 'public_con@books')->name('books');
+Route::get('/categories/journal', 'public_con@journal')->name('journal');
+Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
 
-Route::get('/chekout', 'user_con@chekout');
- Route::get('/cart', 'public_con@cart');
- Route::get('/', 'public_con@index');
- Route::get('/about', 'public_con@about');
- Route::get('/contact', 'public_con@contact');
- Route::get('/shop', 'public_con@shop');
- Route::get('/event', 'public_con@event');
- Route::get('/hadik', 'public_con@hadik');
- Route::get('/acount', 'public_con@acount');
- Route::get('/categories/movies', 'public_con@movies');
- Route::get('/categories/books', 'public_con@books');
- Route::get('/inscription', 'public_con@inscription');
- Route::get('/categories/journal', 'public_con@journal');
- Route::get('/categories/magazins', 'public_con@magazins');
- Route::namespace('Admin')->prefix('admin')->group(function () {
-     Route::get('user/{userid}/{name}', 'user_con@index');
- });
 // test

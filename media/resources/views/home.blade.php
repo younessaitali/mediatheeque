@@ -8,7 +8,7 @@
                     <div class="hero container">
                         <div class="categorys">
                                 
-                            <h1>Categories</h1>
+                            <h1><a href="/categories">Categories</a></h1>
                             <div class="hero-buttons">
                                 <a href="/categories/movies" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
                                 <a href="/categories/books" class="button button-white"><span class="fa fa-book" ></span>Books</a>
@@ -83,7 +83,7 @@
         </div><!-- end pr-show container -->
         <div class="featured-section">
                 <div class="container">
-                    <h1 class="text-center">CSS Grid Example</h1>
+                    <h1 class="text-center">Featured</h1>
             
                     <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid earum fugiat debitis nam, illum vero, maiores odio exercitationem quaerat. Impedit iure fugit veritatis cumque quo provident doloremque est itaque.</p>
             
@@ -96,15 +96,15 @@
                     <div class="products text-center">
                         @foreach ($products as $product )
                               <div class="product">
-                                    <a href="#"><img src="img/books/1.jpg" alt="product"></a>
-                              <a href="#"><div class="product-name">{{ $product->title}}</div></a>
+                                    <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                              <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
                               <div class="product-price">{{$product->price}}$</div>
                               </div>
                         @endforeach
                     </div> <!-- end products -->
             
                     <div class="text-center button-container">
-                        <a href="#" class="button">View more products</a>
+                        <a href="{{route('shop.index')}}" class="button">View more products</a>
                     </div>
             
    <div class="featured-section">
@@ -120,32 +120,20 @@
 
 
         <div class="products text-center">
+
+                @foreach ($_products as $product )
+
             <div class="product">
-                <a href="#"><img src="img/movies/06.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book4</div></a>
-                <div class="product-price">batel$</div>
+                <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
+                <div class="product-price">{{ $product->title}}$</div>
             </div>
-            <div class="product">
-                <a href="#"><img src="img/movies/03.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book3</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            <div class="product">
-                <a href="#"><img src="img/movies/01.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book2</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            
-            <div class="product">
-                <a href="#"><img src="img/movies/04.jpg" alt="product"></a>
-                <a href="#"><div class="product-name">book</div></a>
-                <div class="product-price">batel$</div>
-            </div>
-            
+           
+            @endforeach
         </div> <!-- end products -->
 
         <div class="text-center button-container">
-            <a href="#" class="button">View more products</a>
+            <a href="{{route('shop.index')}}" class="button">View more products</a>
         </div>
         
                 </div> <!-- end container -->

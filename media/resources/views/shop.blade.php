@@ -14,15 +14,15 @@
         <div class="sidebar">
             <h3>By Category</h3>
             <ul>
-                <li class="Movies"><a href="#">Movies</a></li>
-                <li class="Movies"><a href="#">BOOKs</a></li>
-                <li class="Movies"><a href="#">Journal</a></li>
-                <li class="Movies"><a href="#">Magazins</a></li>
+                <li class="Movies"><a href="{{route('movies')}}">Movies</a></li>
+                <li class="Movies"><a href="{{route('books')}}">Books</a></li>
+                <li class="Movies"><a href="{{route('journal')}}">Journal</a></li>
+                <li class="Movies"><a href="{{route('magazins')}}">Magazins</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div>
             <div class="products-header">
-                    <h1 class="stylish-heading">Featured</h1>
+                    <h1 class="stylish-heading">Shop</h1>
                 <div>
                     <strong>Price: </strong>
                     <a href="#">Low to High</a> 
@@ -36,11 +36,11 @@
                     @foreach ($products as $product )
 
                     <div class="product">
-                            <a href=""><img src="img/books/1.jpg" alt="product"></a>
-                            <a href=""><div class="product-name">{{ $product->title}}</div></a>
+                    <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                            <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
                             <div class="product-price">${{$product->price}}</div>
                         </div><!-- end products -->
-                
+                      
                     @endforeach
     
 @endsection
