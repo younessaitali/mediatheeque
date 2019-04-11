@@ -83,7 +83,7 @@
         </div><!-- end pr-show container -->
         <div class="featured-section">
                 <div class="container">
-                    <h1 class="text-center">CSS Grid Example</h1>
+                    <h1 class="text-center">Featured</h1>
             
                     <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid earum fugiat debitis nam, illum vero, maiores odio exercitationem quaerat. Impedit iure fugit veritatis cumque quo provident doloremque est itaque.</p>
             

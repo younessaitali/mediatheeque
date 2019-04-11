@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\products;
@@ -81,7 +82,21 @@ class cart_con extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required|numeric|between:1,10'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['success' => false], 400);
+        }
+
+
+
+
+
+        Cart::update($id, $request->quantity);
+        return response()->json(['success' => true]);
     }
 
     /**
