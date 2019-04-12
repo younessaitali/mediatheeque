@@ -1,3 +1,4 @@
+
 @extends('layouts.nav_bar')
 
 @section('title', 'Products')
@@ -48,5 +49,5 @@
 @endsection
 
 @section('extra-js')
-   
+
 @endsection
