@@ -4,6 +4,7 @@ use Illuminate\Routing\Router;
 
 Admin::registerAuthRoutes();
 
+
 Route::group([
     'prefix'        => config('admin.route.prefix'),
     'namespace'     => config('admin.route.namespace'),
@@ -11,5 +12,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-
+    $router->resource('user', 'usersController');
+    $router->resource('product', 'productsController');
 });
