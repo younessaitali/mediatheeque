@@ -338,5 +338,11 @@ return [
         'media-manager' => [
             'disk' => 'local'   // Points to the disk set in config/filesystem.php
         ],
+        'grid-lightbox' => [
+
+            // Set to `false` if you want to disable this extension
+            'enable' => true,
+        ],
+
     ],
 ];

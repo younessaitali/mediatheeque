@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\products;
+use App\categories;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
@@ -10,7 +10,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class productsController extends Controller
+class categoriesController extends Controller
 {
     use HasResourceActions;
 
@@ -79,21 +79,12 @@ class productsController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new products);
+        $grid = new Grid(new categories);
 
         $grid->id('Id');
-        $grid->categories_id('Categories id');
-        $grid->title('Title');
-        $grid->description('Description');
-        $grid->_tags(' tags');
-        $grid->price('Price');
-        $grid->promo_price('Promo price');
-        $grid->option_id('Option id');
-        $grid->stars('Stars');
-        $grid->quantity('Quantity');
-        $grid->type('Type');
-        $grid->disp('Disp');
-        $grid->sim_id('Sim id');
+        $grid->name('Name');
+        $grid->p_id('P id');
+        $grid->p_id('P id');
         $grid->created_at('Created at');
         $grid->updated_at('Updated at');
 
@@ -108,24 +99,13 @@ class productsController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(products::findOrFail($id));
+        $show = new Show(categories::findOrFail($id));
 
         $show->id('Id');
-        $show->categories_id('Categories id');
-        $show->title('Title');
-        $show->description('Description');
-        $show->_tags(' tags');
-        $show->price('Price');
-        $show->promo_price('Promo price');
-        $show->option_id('Option id');
-        $show->stars('Stars');
-        $show->quantity('Quantity');
-        $show->type('Type');
-        $show->disp('Disp');
-        $show->sim_id('Sim id');
+        $show->name('Name');
+        $show->p_id('P id');
         $show->created_at('Created at');
         $show->updated_at('Updated at');
-
 
         return $show;
     }
@@ -137,20 +117,14 @@ class productsController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new products);
+        $form = new Form(new categories);
 
-        $form->number('categories_id', 'Categories id');
-        $form->text('title', 'Title');
-        $form->textarea('description', 'Description');
-        $form->text('_tags', ' tags');
-        $form->decimal('price', 'Price');
-        $form->decimal('promo_price', 'Promo price');
-        $form->number('option_id', 'Option id');
-        $form->number('stars', 'Stars');
-        $form->number('quantity', 'Quantity');
-        $form->text('type', 'Type');
-        $form->switch('disp', 'Disp');
-        $form->number('sim_id', 'Sim id');
+        $form->text('name', 'Name');
+        $category = [
+            1 => 'movies',
+            2 => 'books',
+        ];
+        $form->select('p_id', 'P id')->options($category);
 
         return $form;
     }
