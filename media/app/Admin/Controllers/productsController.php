@@ -9,6 +9,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use Illuminate\Support\Collection;
 
 class productsController extends Controller
 {
@@ -79,13 +80,14 @@ class productsController extends Controller
      */
     protected function grid()
     {
+        $pic = "/storage/sfgfgfsfg.jpg";
         $grid = new Grid(new products);
 
         $grid->id('Id');
         $grid->categories_id('Categories id');
         $grid->title('Title');
         $grid->description('Description');
-        $grid->_tags(' tags');
+        $grid->_tags('tags')->pluck('img_path')->pluck(0)->map('ucwords')->implode('-')->image();
         $grid->price('Price');
         $grid->promo_price('Promo price');
         $grid->option_id('Option id');
