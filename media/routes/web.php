@@ -36,3 +36,7 @@ Route::get('/categories/journal', 'public_con@journal')->name('journal');
 Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
 
 // test
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
