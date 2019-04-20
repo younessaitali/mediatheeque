@@ -62,6 +62,11 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                @if ($p_url=='/cart')
+                                <a class="btn btn-link" href="{{ route('guestchekout') }}">
+                                    {{ __('Chekout  as guest?') }}
+                                </a>
+                                @endif
                             </div>
                         </div>
                     </form>

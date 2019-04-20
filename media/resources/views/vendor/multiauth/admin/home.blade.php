@@ -8,7 +8,7 @@
 
                 <div class="card-body">
                 @include('multiauth::message')
-                     You are logged in to {{ config('multiauth.prefix') }} side!
+                     You are logged in to sddfs {{ config('multiauth.prefix') }} side!
                 </div>
             </div>
         </div>

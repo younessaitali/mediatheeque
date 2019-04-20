@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMediathequeTable extends Migration
+class CreateInvoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateMediathequeTable extends Migration
      */
     public function up()
     {
-        Schema::create('mediatheque', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('admin_id')->unsigned();
+            $table->bigInteger('media_id')->unsigned();
+            $table->bigInteger('order_id')->unsigned();
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateMediathequeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mediatheque');
+        Schema::dropIfExists('invoices');
     }
 }

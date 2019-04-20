@@ -36,4 +36,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+
+    // for user experience we redirect the user to the same page page he was in beffore login
+    public function showLoginForm()
+    {
+        session()->put('previousUrl', url()->previous());
+        $asguest = str_replace(url('/'), '', session()->get('previousUrl', '/'));
+
+        return view('auth.login')->with('p_url', $asguest);
+    }
+
+    public function redirectTo()
+    {
+        return str_replace(url('/'), '', session()->get('previousUrl', '/'));
+    }
 }

@@ -10,10 +10,45 @@
                 <form action="" method="POST" id="payment-form">
                     <!-- !!!!!! -->
                     <h2>Billing Details</h2>
-    
+                    
+                    @auth
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                                                    <input type="email" class="form-control" id="email" name="email" value="" required>
+                    <input type="email" class="form-control" id="email" name="email" value="{{auth()->user()->email}}" required>
+                                            </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="{{auth()->user()->Adresse}}" required>
+                    </div>
+    
+                    <div class="half-form">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city" value="{{auth()->user()->City}}" required>
+                        </div>
+                      
+                    </div> <!-- end half-form -->
+    
+                    <div class="half-form">
+                        <div class="form-group">
+                            <label for="postalcode">Postal Code</label>
+                            <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{auth()->user()->Code_postale}}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="" required>
+                        </div>
+                    </div> <!-- end half-form -->
+                    @endauth 
+                    
+                    @guest
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" value="" required>
                                             </div>
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -43,6 +78,8 @@
                         </div>
                     </div> <!-- end half-form -->
     
+                    @endguest
+                    
                     <div class="spacer"></div>
     
                     <h2>Payment Details</h2>
@@ -97,7 +134,7 @@
                         @foreach (Cart::content() as $item)
                     <div class="checkout-table-row">
                         <div class="checkout-table-row-left">
-                            <img src={{$item->model->_tags['img_path'][0]}} alt="item" class="checkout-table-img">
+                            <img src={{$item->model->images[0]}} alt="item" class="checkout-table-img">
                             <div class="checkout-item-details">
                                 <div class="checkout-table-item">{{$item->model->title}}</div>
                                 <div class="checkout-table-description">{{$item->model->description}}</div>

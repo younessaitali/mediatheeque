@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubTable extends Migration
+class CreateSubsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,19 @@ class CreateSubTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub', function (Blueprint $table) {
+        Schema::create('subs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('sub_type_id')->foreign()->references('id')->on('sub_type');
+            $table->bigInteger('sub_type_id')->unsigned();
             $table->date('sub_date');
             $table->date('expiry_date');
-            $table->bigInteger('payment_id')->foreign()->references('id')->on('payment');
+            $table->bigInteger('payment_id')->unsigned();
+
             $table->timestamps();
+        });
+
+        Schema::table('subs', function ($table) {
+            $table->foreign('sub_type_id')->references('id')->on('sub_types');
+            $table->foreign('payment_id')->references('id')->on('payments');
         });
     }
 
@@ -30,6 +36,6 @@ class CreateSubTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub');
+        Schema::dropIfExists('subs');
     }
 }

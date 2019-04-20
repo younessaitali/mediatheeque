@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubTypeTable extends Migration
+class CreateShippersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSubTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_type', function (Blueprint $table) {
+        Schema::create('shippers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Name');
-            $table->integer('price');
-            $table->text('description');
-            $table->integer('qouta');
+            $table->char('phone', 20);
+            $table->char('C_name', 25);
+            $table->char('adresse', 150);
+            $table->char('id_id', 100);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSubTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_type');
+        Schema::dropIfExists('shippers');
     }
 }

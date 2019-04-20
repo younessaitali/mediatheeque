@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateOptionTable extends Migration
      */
     public function up()
     {
-        Schema::create('option', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('description');
+            $table->string('name');
+            $table->bigInteger('p_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateOptionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option');
+        Schema::dropIfExists('categories');
     }
 }

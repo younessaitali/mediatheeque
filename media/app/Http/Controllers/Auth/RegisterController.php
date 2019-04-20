@@ -76,4 +76,17 @@ class RegisterController extends Controller
             'Sub_id' => $data['Sub_id'],
         ]);
     }
+
+    // for user experience we redirect the user to the same page page he was in beffore login
+    public function showLoginForm()
+    {
+        session()->put('previousUrl', url()->previous());
+
+        return view('auth.login');
+    }
+
+    public function redirectTo()
+    {
+        return str_replace(url('/'), '', session()->get('previousUrl', '/'));
+    }
 }

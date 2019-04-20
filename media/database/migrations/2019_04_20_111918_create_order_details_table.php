@@ -15,16 +15,18 @@ class CreateOrderDetailsTable extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('Product_id')->foreign()->references('id')->on('product');
-            $table->bigInteger('order_id')->foreign()->references('id')->on('orders');
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->bigInteger('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->double('price', 8, 2);
             $table->integer('quantity');
             $table->string('type');
-            $table->bigInteger('option_id')->foreign()->references('id')->on('option');
-            $table->bigInteger('shipper_id')->foreign()->references('id')->on('shipper');
+            $table->bigInteger('option_id')->unsigned();
+            $table->foreign('option_id')->references('id')->on('options');
+            $table->bigInteger('shipper_id')->unsigned();
+            $table->foreign('shipper_id')->references('id')->on('shippers');
             $table->integer('status');
-            $table->dateTime('s_date');
-
             $table->timestamps();
         });
     }

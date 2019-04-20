@@ -1,4 +1,4 @@
-@extends('multiauth::layouts.app') 
+@extends('layouts.nav_bar')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -64,3 +64,10 @@
     </div>
 </div>
 @endsection
+
+
+
+
+
+
+

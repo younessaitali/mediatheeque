@@ -18,7 +18,8 @@ class CreateAdminsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('grad');
+            $table->bigInteger('media_id')->unsigned()->nullable();
+            $table->foreign('media_id')->references('id')->on('mediatheques');
             $table->boolean('active')->default(0);
             $table->rememberToken();
             $table->timestamps();

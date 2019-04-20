@@ -15,7 +15,10 @@
         
         <p class="setting"><span class="spann">Code Postale<img src="img/user/edit.png" alt="*Edit*"></span>   {{ $item->Code_postale }}</p>
       
-
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            @csrf
+            <button type="submit">Logout</button>      
+          </form>
         @endforeach
     </section>
 @endsection

@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('City');
             $table->string('Code_postale')->nullable();
             $table->string('ship_Adresse')->nullable();
-            $table->bigInteger('Sub_id')->nullable()->foreign()->references('id')->on('sub');
+            $table->bigInteger('Sub_id')->nullable()->unsigned();
+            $table->foreign('Sub_id')->references('id')->on('subs');
             $table->rememberToken();
             $table->timestamps();
         });

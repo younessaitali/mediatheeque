@@ -15,7 +15,7 @@
 
                             <div class="cart-table-row">
                 <div class="cart-table-row-left">
-                <a href="{{route('product.show',$item->model->id)}}"><img src={{$item->model->_tags['img_path'][0]}} alt="item" class="cart-table-img">{{$item->model->title}}</a>
+                <a href="{{route('product.show',$item->model->id)}}"><img src={{$item->model->images[0]}} alt="item" class="cart-table-img">{{$item->model->title}}</a>
                     <div class="cart-item-details">
                         <div class="cart-table-item"><a href="">{{$item->model->title}}</a></div>
                         <div class="cart-table-description">{{$item->model->description}}</div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShipperTable extends Migration
+class CreateMediathequesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateShipperTable extends Migration
      */
     public function up()
     {
-        Schema::create('shipper', function (Blueprint $table) {
+        Schema::create('mediatheques', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('phone', 20);
-            $table->char('C_name', 25);
-            $table->char('adresse', 150);
-            $table->char('id_id', 100);
+            $table->string('name');
+            $table->string('adresse');
+            $table->string('phone');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateShipperTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipper');
+        Schema::dropIfExists('mediatheques');
     }
 }

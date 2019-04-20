@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePenaltyTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreatePenaltyTable extends Migration
      */
     public function up()
     {
-        Schema::create('penalty', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('id_category')->foreign()->references('id')->on('categories');
-            $table->integer('penalty');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->text('review');
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreatePenaltyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penalty');
+        Schema::dropIfExists('reviews');
     }
 }

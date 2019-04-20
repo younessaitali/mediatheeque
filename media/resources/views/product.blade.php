@@ -3,21 +3,21 @@
  <div class="product-section container">
         <div>
             <div class="product-section-image">
-                <img src={{$product->_tags['img_path'][0]}} alt="product" class="active" id="currentImage">
+                <img src={{$product->images[0]}} alt="product" class="active" id="currentImage">
             </div>
             <div class="product-section-images">
                 <div class="product-section-thumbnail selected">
-                    <img src="" alt="product">
+                <img src="{{$product->images[0]}}" alt="product">
                 </div>
 
                                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                                 </div>
         </div>
@@ -41,7 +41,7 @@
                     </div>
     </div> <!-- end product-section -->
 
-    <img src={{$product->_tags['img_path'][0]}} alt="product">
+    <img src={{$product->images[0]}} alt="product">
 
 @endsection
 @section('extra-js')
