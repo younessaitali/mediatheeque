@@ -39,7 +39,7 @@
                             <input type="hidden" name="price" value="{{$item->model->price}}">
 
 
-                            <button type="submit" class="cart-options">Save for Later</button>
+                            <button type="submit" class="cart-options"><i class="fa fa-heart" aria-hidden="true"></i></button>
                         </form>
                     </div>
                     <div>

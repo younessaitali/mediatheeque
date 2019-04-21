@@ -34,5 +34,7 @@ Route::get('/categories/movies', 'public_con@movies')->name('movies');
 Route::get('/categories/books', 'public_con@books')->name('books');
 Route::get('/categories/journal', 'public_con@journal')->name('journal');
 Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
+Route::get('/login', 'Sessionscontroller@create');
+Route::get('/logout', 'Sessionscontroller@create');
 
 // test

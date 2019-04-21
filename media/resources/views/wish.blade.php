@@ -50,7 +50,7 @@
                        
              @endforeach
         </div> <!-- end cart-table -->
-
+        <a href="{{route('shop.index')}}" class="button">Continue Shopping</a>
 
 
     

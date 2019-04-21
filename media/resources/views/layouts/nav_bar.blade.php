@@ -49,6 +49,7 @@
                                  </i>
                                       </span>
                                              </a>
+                            <a href="/wish"><span class="wishlist" ><i class="fa fa-heart" aria-hidden="true"></i></span></a>
                             <a href="/user"><span class="user" ><i class="fa fa-user" aria-hidden="true"></i></span></a>
                             </div>
                     </div> <!-- end top-nav -->
