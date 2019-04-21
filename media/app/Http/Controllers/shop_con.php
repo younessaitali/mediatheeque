@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\products;
+use App\categories;
 
-class cart_con extends Controller
+class shop_con extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +15,41 @@ class cart_con extends Controller
      */
     public function index()
     {
-        return view("cart");
+
+        $category_id = request()->category;
+        $sort = request()->sort;
+        $pagination = 9;
+        $categories = categories::all();
+        if (empty($category_id)) {
+
+            $products = products::take(12);
+            $category_name = 'shop';
+        } else {
+            $products = products::where('categories_id', $category_id)->take(12);
+
+            $cat_name = categories::where('id', $category_id)->firstorFail();
+            $category_name = $cat_name->name;
+        }
+
+
+        if ($sort == 1) {
+            $products = $products->orderBy('price')->paginate($pagination);
+        } elseif ($sort == 2) {
+            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+        } else {
+            $products = $products->paginate($pagination);
+        }
+
+
+
+
+
+
+        return view("shop")->with([
+            'products' => $products,
+            'categories' => $categories,
+            'cat_name' => $category_name,
+        ]);
     }
 
     /**
@@ -38,30 +70,17 @@ class cart_con extends Controller
      */
     public function store(Request $request)
     {
-        $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
-            return $cartItem->id === $request->id;
-        });
-
-        if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index');
-        }
-
-        Cart::add($request->id, $request->title, 1, $request->price)
-            ->associate('App\products');
-
-        return redirect()->route('cart.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id 
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -83,21 +102,7 @@ class cart_con extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,10'
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['success' => false], 400);
-        }
-
-
-
-
-
-        Cart::update($id, $request->quantity);
-        return response()->json(['success' => true]);
+        //
     }
 
     /**
@@ -108,7 +113,6 @@ class cart_con extends Controller
      */
     public function destroy($id)
     {
-        Cart::remove($id);
-        return back();
+        //
     }
 }
