@@ -22,7 +22,7 @@ class user_con extends Controller
      */
     public function index()
     {
-        $user = users::all();
+        $user = users::where('id', auth()->id())->get();
         return view('user.index', compact('user'));
     }
 

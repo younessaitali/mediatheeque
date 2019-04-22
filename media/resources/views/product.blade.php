@@ -28,6 +28,15 @@
             <div class="product-section-price">${{$product->price}}</div>
 
             <p>{{$product->description}}</p>
+            <select class="quantity" element-id="{{$item->rowId}}" >
+                        
+                @for ($i =1 ; $i <10+1 ; $i++)
+
+                  <option {{$item->qty == $i ? 'selected':''}}>{{$i}}</option>
+                
+                @endfor
+                                            
+            </select>
 
             <p>&nbsp;</p>
 
@@ -36,7 +45,26 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
-                    <button type="submit" class="button button-plain">Add to Cart</button>
+                            <input type="hidden" name="option" value="{{$product->option_id}}">
+                            
+                            @if ($product->option_id ==3)
+                            <button type="submit" class="button button-plain" name="P_option"  value="add">Add to Cart</button>
+                            <button type="submit" class="button button-plain" name="P_option" value="buy">Buy now</button>
+                            <button type="submit" class="button button-plain" name="P_optiom" value="rent">Rent</button>    
+                            @endif
+
+                            @if ($product->option_id ==1)
+                            <button type="submit" class="button button-plain" name="P_optiom"  value="add">Add to Cart</button>
+                            <button type="submit" class="button button-plain" name="P_optiom" value="buy">Buy now</button>
+                            @endif
+                    
+
+                            @if ($product->option_id ==2)
+                            <button type="submit" class="button button-plain" name="P_optiom"  value="add">Add to Cart</button>
+                            <button type="submit" class="button button-plain" name="P_optiom" value="rent">Rent</button>  
+                            @endif
+
+
                 </form>
                     </div>
     </div> <!-- end product-section -->

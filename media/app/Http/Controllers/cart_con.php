@@ -38,15 +38,17 @@ class cart_con extends Controller
      */
     public function store(Request $request)
     {
+
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
+
 
         if ($duplicates->isNotEmpty()) {
             return redirect()->route('cart.index');
         }
 
-        Cart::add($request->id, $request->title, 1, $request->price)
+        Cart::add($request->id, $request->title, 1, $request->price, ['option' => $request->option])
             ->associate('App\products');
 
         return redirect()->route('cart.index');
