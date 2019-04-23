@@ -39,6 +39,7 @@ class cart_con extends Controller
     public function store(Request $request)
     {
 
+
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;
         });
@@ -86,20 +87,42 @@ class cart_con extends Controller
     public function update(Request $request, $id)
     {
 
-        $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,10'
-        ]);
 
-        if ($validator->fails()) {
-            return response()->json(['success' => false], 400);
+
+        if (isset($request->option_id)) {
+
+
+            $validator = Validator::make($request->all(), [
+                'option_id' => 'required|numeric|between:1,3',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['success' => false], 400);
+            }
+
+
+            Cart::update($id, ['options' => ['option' => $request->option_id]]);
+
+
+            return response()->json(['success' => true]);
         }
+        if (isset($request->quantity)) {
 
 
+            $validator = Validator::make($request->all(), [
+                'quantity' => 'required|numeric|between:1,10',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['success' => false], 400);
+            }
 
 
+            Cart::update($id, $request->quantity);
 
-        Cart::update($id, $request->quantity);
-        return response()->json(['success' => true]);
+
+            return response()->json(['success' => true]);
+        }
     }
 
     /**

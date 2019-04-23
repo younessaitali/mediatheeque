@@ -23,6 +23,33 @@
                 </div>
                 <div class="cart-table-row-right">
                     <div class="cart-table-actions">
+
+
+                            <div>
+                                    <select class="optionselect"  onchange="optionselected()" element-id="{{$item->rowId}}" >
+                                        
+                                            
+                                                @if ($item->model->option_id==1)
+                                                <option {{$item->options->option == 1 ? 'selected':''}} value="1">Buy</option> 
+                                                @endif
+
+
+                                                @if ($item->model->option_id==2)
+                                                <option {{$item->options->option == 2 ? 'selected':''}} value="2" >Rent</option>    
+                                                @endif
+
+
+                                                @if ($item->model->option_id==3)
+                                                <option {{$item->options->option == 1 ? 'selected':''}} value="1" >Buy</option>
+                                                <option {{$item->options->option == 2 ? 'selected':''}} value="2">Rent</option>    
+                                                @endif
+                                            
+                                                                        
+                                        </select>
+                            </div>
+
+
+
                     <form action="{{route('cart.destroy',$item->rowId)}}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
@@ -42,6 +69,9 @@
                             <button type="submit" class="cart-options">Save for Later</button>
                         </form>
                     </div>
+
+
+
                     <div>
                     <select class="quantity" element-id="{{$item->rowId}}" >
                         
@@ -56,11 +86,11 @@
                     <div>${{ price($item->price,$item->qty) }}</div>
                 </div>
             </div> <!-- end cart-table-row -->
-                       
+            <h1>{{$item->options->option}}</h1>
              @endforeach
         </div> <!-- end cart-table -->
 
-
+         
 
         <div class="cart-totals">
                 <div class="cart-totals-left">
@@ -130,12 +160,36 @@
                         })
                         .catch(function (error) {
                             console.log(error);
-                            alert('qty');
+                            alert(error);
                         });
 
                 })
             })
         })();
+
+
+        (function(){
+            const classname = document.querySelectorAll('.optionselect')
+            Array.from(classname).forEach(function(element){
+                element.addEventListener('change',function(){
+                    const id =  element.getAttribute('element-id')
+                    axios.patch(`/cart/${id}`, {
+                            option_id: this.value
+                        })
+                        .then(function (response) {
+                            window.location.href = `{{ route('cart.index') }}`
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                            alert(error);
+                        });
+
+                })
+            })
+        })();
+
+    
+     
    
    </script>
 @endsection

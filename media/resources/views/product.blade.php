@@ -28,15 +28,35 @@
             <div class="product-section-price">${{$product->price}}</div>
 
             <p>{{$product->description}}</p>
-            <select class="quantity" element-id="{{$item->rowId}}" >
-                        
-                @for ($i =1 ; $i <10+1 ; $i++)
+           
+            @if ($product->option_id==1)
 
-                  <option {{$item->qty == $i ? 'selected':''}}>{{$i}}</option>
+                   <select id="mySelect" onchange="optionselected()">
+                       <option value="1" selected>Buy</option>
+                     </select>
+              
                 
-                @endfor
-                                            
-            </select>
+            @endif
+
+            @if ($product->option_id==2)
+            
+                     <select id="mySelect" onchange="optionselected()">
+                         <option value="2" selected >Rent</option>
+                     </select>
+                  
+
+            @endif
+
+            @if ($product->option_id==3)
+            
+                
+                    <select id="mySelect" onchange="optionselected()">
+                        <option value="1" selected >Buy</option>
+                        <option value="2">Rent</option>
+                    </select>
+
+
+            @endif
 
             <p>&nbsp;</p>
 
@@ -45,24 +65,13 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
-                            <input type="hidden" name="option" value="{{$product->option_id}}">
-                            
-                            @if ($product->option_id ==3)
+                            <input type="hidden" name="option" id="option_v" value="">
+                           
+
+
                             <button type="submit" class="button button-plain" name="P_option"  value="add">Add to Cart</button>
                             <button type="submit" class="button button-plain" name="P_option" value="buy">Buy now</button>
-                            <button type="submit" class="button button-plain" name="P_optiom" value="rent">Rent</button>    
-                            @endif
-
-                            @if ($product->option_id ==1)
-                            <button type="submit" class="button button-plain" name="P_optiom"  value="add">Add to Cart</button>
-                            <button type="submit" class="button button-plain" name="P_optiom" value="buy">Buy now</button>
-                            @endif
-                    
-
-                            @if ($product->option_id ==2)
-                            <button type="submit" class="button button-plain" name="P_optiom"  value="add">Add to Cart</button>
-                            <button type="submit" class="button button-plain" name="P_optiom" value="rent">Rent</button>  
-                            @endif
+                       
 
 
                 </form>
@@ -74,6 +83,21 @@
 @endsection
 @section('extra-js')
     <script>
+        @if ($product->option_id==1)
+
+        x=1;
+        document.getElementById("option_v").value = x;
+
+        @endif
+
+        @if ($product->option_id==2)
+
+        x=2;
+        document.getElementById("option_v").value = x;
+
+        @endif
+
+
         (function(){
             const currentImage = document.querySelector('#currentImage');
             const images = document.querySelectorAll('.product-section-thumbnail');
@@ -93,6 +117,35 @@
             }
 
         })();
+
+        
+
+        function optionselected() {
+
+
+
+            @if ($product->option_id==1)
+
+                    x=1;
+                    document.getElementById("option_v").value = x;
+
+            @endif
+
+            @if ($product->option_id==2)
+
+                    x=2;
+                    document.getElementById("option_v").value = x;
+
+            @endif
+
+             @if ($product->option_id==3)
+
+                  var sele = document.getElementById("mySelect").value;
+                    document.getElementById("option_v").value = sele;
+
+            @endif
+}
+
     </script>
 
 
