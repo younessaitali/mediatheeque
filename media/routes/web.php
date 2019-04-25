@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });*/
 Route::get('/chekout', 'chekout_con@index')->middleware('auth');
+Route::post('/chekout', 'chekout_con@store')->name('chekout.store');
 Route::get('/guestchekout', 'chekout_con@index')->name('guestchekout');
 Route::resource('/wish', 'wish_con');
 Route::resource('/shop', 'shop_con');

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class chekout_con extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

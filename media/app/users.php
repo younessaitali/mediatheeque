@@ -13,4 +13,9 @@ class users extends Authenticatable
         'name', 'email', 'password', 'Adresse', 'Code_postale', 'City'
 
     ];
+
+    public function sub()
+    {
+        return $this->belongsTo('App\sub');
+    }
 }

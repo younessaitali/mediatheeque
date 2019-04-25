@@ -278,12 +278,12 @@ h1.checkout-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #212121;
+  border-top: 1px solid #474646;
   padding: 14px 0;
 }
 
 .checkout-section .checkout-table-row:last-child {
-  border-bottom: 1px solid #212121;
+  border-bottom: 1px solid #474646;
 }
 
 .checkout-section .checkout-table-row .checkout-table-row-left,
@@ -302,7 +302,7 @@ h1.checkout-heading {
 }
 
 .checkout-section .checkout-table-row .checkout-table-description {
-  color: #212121;
+  color: #474646;
 }
 
 .checkout-section .checkout-table-row .checkout-table-price {
@@ -310,7 +310,7 @@ h1.checkout-heading {
 }
 
 .checkout-section .checkout-table-row .checkout-table-quantity {
-  border: 1px solid #212121;
+  border: 1px solid #474646;
   padding: 4px 12px;
   margin-right: 5px;
 }
@@ -318,7 +318,7 @@ h1.checkout-heading {
 .checkout-section .checkout-totals {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #212121;
+  border-bottom: 1px solid #474646;
   padding: 18px 0;
   line-height: 2;
 }
@@ -331,6 +331,29 @@ h1.checkout-heading {
   font-weight: bold;
   font-size: 22px;
   line-height: 2.2;
+}
+
+/**
+* The CSS shown here will not be introduced in the Quickstart guide, but shows
+* how you can use CSS to style your Element's container.
+*/
+
+.StripeElement {
+  background-color: white;
+  padding: 16px 16px;
+  border: 1px solid #ccc;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  color: #fa755a;
 }
 
 .hero {

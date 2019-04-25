@@ -10,4 +10,15 @@ class products extends Model
         'images' => 'array',
         'tags' => 'array'
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo('App\categorie');
+    }
+
+
+    public function option()
+    {
+        return $this->belongsTo('App\option');
+    }
 }
