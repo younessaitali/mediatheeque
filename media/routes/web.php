@@ -59,4 +59,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::Patch('/categories/{id}', 'admin_categories_controller@update')->name('admin.categorie.update');
     Route::GET('/categories/create', 'admin_categories_controller@create')->name('admin.categorie.create');
     Route::POST('/categories', 'admin_categories_controller@store')->name('admin.categorie.store');
+
+
+
+    Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
+    Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
 });
