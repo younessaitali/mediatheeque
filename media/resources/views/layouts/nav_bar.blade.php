@@ -23,16 +23,9 @@
                     <div class="top-nav container">
                         <div class="logo"><a href="/">Mediatheque</a></div>
                             <div class="centre">
-                            <ul><a href="/">Home</a>
-                                  <div class="dropdown">
-                                  <li><button class="dropbtn"><a href="/categories">Categories<span class="fa fa-caret-down" ></span></a></button></li>
-                                     <div class="dropdown-content">
-                                        <a href="/categories/movies">Movies</a>
-                                        <a href="/categories/books">Books</a>
-                                        <a href="/categories/magazins">Magazins</a>
-                                        <a href="/categories/journal">Journal</a>  
-                                </div>
-                            </div>
+                            <ul>
+                            <li><a href="/">Home</a>
+                            <li> <a href="/shop">shop</a></li>
                            <li> <a href="/event">Event</a></li>
                             <li><a href="/about">About</a></li>
                            <li> <a href="/contact">Contact us</a></li>

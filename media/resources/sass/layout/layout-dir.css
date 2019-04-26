@@ -39,12 +39,9 @@ header .top-nav .centre .dropdown {
 }
 
 header .top-nav .centre .dropdown .dropbtn {
-  border: none;
-  outline: none;
   background-color: inherit;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: bold;
-  margin: 10;
 }
 
 header .top-nav .centre .dropdown .dropdown-content {

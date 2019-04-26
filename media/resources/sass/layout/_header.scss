@@ -5,8 +5,9 @@ header{
     .top-nav{
         display: flex;
         justify-content: space-between;
-        padding:5px 0;
+        padding:10px 0;
         align-items: flex-start;
+        margin-bottom: 20%;
        
         .logo{
             justify-content: space-between;
@@ -19,43 +20,7 @@ header{
           display: flex;
           justify-content: space-between;
         
-        .dropdown {
-            
-            overflow: hidden;
-          
-           .dropbtn {
-            border: none;
-            outline: none;
-            background-color: inherit;
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-weight: bold;
-            margin: 10;
-          }
-          .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-          }
-          
-          .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-          }
-          .dropdown-content a:hover {
-            background-color: #ddd;
-            
-          }
-          
-          .dropdown:hover .dropdown-content {
-            display: block;
-          }}
+       
         ul{
             
             display: flex;
@@ -67,7 +32,7 @@ header{
           li {
             list-style: none;
             position: relative;
-            padding-left: 11px;
+            padding-left: 50px;
         }
       }
         .icon{
