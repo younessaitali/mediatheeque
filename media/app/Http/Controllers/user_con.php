@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class user_con extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,7 @@ class user_con extends Controller
      */
     public function index()
     {
-        $user = users::all();
+        $user = users::where('id', auth()->id())->get();
         return view('user.index', compact('user'));
     }
 

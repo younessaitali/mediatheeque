@@ -13,7 +13,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         
-        @yield('extra-css')
+        @yield('extra')
         
     </head>
     <body>

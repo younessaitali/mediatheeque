@@ -17,25 +17,17 @@ class ProductsTableSeede extends Seeder
             Products::create([
                 'title' => 'Boook ' . $i,
                 'description' => 'this book is amazing buy it now-' . $i,
-                '_tags' => [
-                    "img_path" => ["/img/books/" . $i . ".jpg"],
-                    "auth" => "auth" . $i,
-                    "genre" => "genre" . $i
-                ],
+                'images' => ["/img/books/" . $i . ".jpg", " "],
 
-                'price' => rand(0, 249999),
-                'promo_price' => rand(0, 249999),
-                'stars' => 2,
+                'price' => rand(0, 100),
+                'promo_price' => rand(0, 100),
+                'stars' => 5,
                 'categories_id' => 2,
                 'quantity' => rand(0, 200),
-                'type' => [
-                    "audiobook" => ["price" => "123", "promo_price" => "123"],
-                    "Digital" =>  ["price" => "222", "promo_price" => "222"],
-                    "hardcover" =>  ["price" => "33", "promo_price" => "333"]
-                ],
+                'tags' => ["audiobook", "autho"],
                 'disp' => rand(true, false),
-
-
+                'option_id' => 1,
+                'mult' => false,
 
             ]);
         }
@@ -43,24 +35,17 @@ class ProductsTableSeede extends Seeder
             Products::create([
                 'title' => 'Movie ' . $i,
                 'description' => 'this movie is amazing by it now-' . $i,
-                '_tags' => [
-                    "img_path" => ["/img/movies/" . $i . ".jpg"],
-                    "auth" => "auth" . $i,
-                    "genre" => "genre" . $i
-                ],
+                'images' => ["/img/movies/" . $i . ".jpg", " "],
 
-
-                'price' => rand(0, 249999),
-                'promo_price' => rand(0, 249999),
-                'quantity' => rand(0, 200),
+                'price' => rand(0, 100),
+                'promo_price' => rand(0, 100),
+                'stars' => 5,
                 'categories_id' => 1,
-                'stars' => 2,
-                'type' => [
-                    "Digital" =>  ["price" => "222", "promo_price" => "222"],
-                    "physical" =>  ["price" => "33", "promo_price" => "333"]
-                ],
+                'quantity' => rand(0, 200),
+                'tags' => ["movie", "director"],
                 'disp' => rand(true, false),
-
+                'option_id' => 1,
+                'mult' => false,
 
             ]);
         }

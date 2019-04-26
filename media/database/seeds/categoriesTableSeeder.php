@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\categories;
+use App\categorie;
 
 class categoriesTableSeeder extends Seeder
 {
@@ -12,22 +12,22 @@ class categoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        categories::create([
+        categorie::create([
             'name' => 'movies',
             'p_id' => '0',
 
         ]);
-        categories::create([
+        categorie::create([
             'name' => 'books',
             'p_id' => '0',
 
         ]);
-        categories::create([
+        categorie::create([
             'name' => 'journal',
             'p_id' => '0',
 
         ]);
-        categories::create([
+        categorie::create([
             'name' => 'magazins',
             'p_id' => '0',
 

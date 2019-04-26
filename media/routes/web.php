@@ -16,7 +16,9 @@
 Route::get('/', function () {
     return view('welcome');
 });*/
-Route::resource('/chekout', 'chekout_con');
+Route::get('/chekout', 'chekout_con@index')->middleware('auth');
+Route::post('/chekout', 'chekout_con@store')->name('chekout.store');
+Route::get('/guestchekout', 'chekout_con@index')->name('guestchekout');
 Route::resource('/wish', 'wish_con');
 Route::resource('/shop', 'shop_con');
 Route::get('/test', 'public_con@test');
@@ -38,3 +40,7 @@ Route::get('/login', 'Sessionscontroller@create');
 Route::get('/logout', 'Sessionscontroller@create');
 
 // test
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

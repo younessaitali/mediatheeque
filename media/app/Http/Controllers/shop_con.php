@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\products;
-use App\categories;
+use App\categorie;
 
 class shop_con extends Controller
 {
@@ -19,7 +19,7 @@ class shop_con extends Controller
         $category_id = request()->category;
         $sort = request()->sort;
         $pagination = 9;
-        $categories = categories::all();
+        $categories = categorie::all();
         if (empty($category_id)) {
 
             $products = products::take(12);
@@ -27,7 +27,7 @@ class shop_con extends Controller
         } else {
             $products = products::where('categories_id', $category_id)->take(12);
 
-            $cat_name = categories::where('id', $category_id)->firstorFail();
+            $cat_name = categorie::where('id', $category_id)->firstorFail();
             $category_name = $cat_name->name;
         }
 

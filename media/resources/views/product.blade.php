@@ -3,21 +3,21 @@
  <div class="product-section container">
         <div>
             <div class="product-section-image">
-                <img src={{$product->_tags['img_path'][0]}} alt="product" class="active" id="currentImage">
+                <img src={{$product->images[0]}} alt="product" class="active" id="currentImage">
             </div>
             <div class="product-section-images">
                 <div class="product-section-thumbnail selected">
-                    <img src="" alt="product">
+                <img src="{{$product->images[0]}}" alt="product">
                 </div>
 
                                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                         <div class="product-section-thumbnail">
-                        <img src={{$product->_tags['img_path'][0]}} alt="product">
+                        <img src={{$product->images[0]}} alt="product">
                     </div>
                                                 </div>
         </div>
@@ -28,6 +28,35 @@
             <div class="product-section-price">${{$product->price}}</div>
 
             <p>{{$product->description}}</p>
+           
+            @if ($product->option_id==1)
+
+                   <select id="mySelect" onchange="optionselected()">
+                       <option value="1" selected>Buy</option>
+                     </select>
+              
+                
+            @endif
+
+            @if ($product->option_id==2)
+            
+                     <select id="mySelect" onchange="optionselected()">
+                         <option value="2" selected >Rent</option>
+                     </select>
+                  
+
+            @endif
+
+            @if ($product->option_id==3)
+            
+                
+                    <select id="mySelect" onchange="optionselected()">
+                        <option value="1" selected >Buy</option>
+                        <option value="2">Rent</option>
+                    </select>
+
+
+            @endif
 
             <p>&nbsp;</p>
 
@@ -36,16 +65,39 @@
                             <input type="hidden" name="id" value="{{$product->id}}">
                             <input type="hidden" name="title" value="{{$product->title}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
-                    <button type="submit" class="button button-plain">Add to Cart</button>
+                            <input type="hidden" name="option" id="option_v" value="">
+                           
+
+
+                            <button type="submit" class="button button-plain" name="P_option"  value="add">Add to Cart</button>
+                            <button type="submit" class="button button-plain" name="P_option" value="buy">Buy now</button>
+                       
+
+
                 </form>
                     </div>
     </div> <!-- end product-section -->
 
-    <img src={{$product->_tags['img_path'][0]}} alt="product">
+    <img src={{$product->images[0]}} alt="product">
 
 @endsection
 @section('extra-js')
     <script>
+        @if ($product->option_id==1)
+
+        x=1;
+        document.getElementById("option_v").value = x;
+
+        @endif
+
+        @if ($product->option_id==2)
+
+        x=2;
+        document.getElementById("option_v").value = x;
+
+        @endif
+
+
         (function(){
             const currentImage = document.querySelector('#currentImage');
             const images = document.querySelectorAll('.product-section-thumbnail');
@@ -65,6 +117,35 @@
             }
 
         })();
+
+        
+
+        function optionselected() {
+
+
+
+            @if ($product->option_id==1)
+
+                    x=1;
+                    document.getElementById("option_v").value = x;
+
+            @endif
+
+            @if ($product->option_id==2)
+
+                    x=2;
+                    document.getElementById("option_v").value = x;
+
+            @endif
+
+             @if ($product->option_id==3)
+
+                  var sele = document.getElementById("mySelect").value;
+                    document.getElementById("option_v").value = sele;
+
+            @endif
+}
+
     </script>
 
 

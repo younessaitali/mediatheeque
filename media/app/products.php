@@ -7,7 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class products extends Model
 {
     protected $casts = [
-        '_tags' => 'array',
-        'type' => 'array'
+        'images' => 'array',
+        'tags' => 'array'
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo('App\categorie');
+    }
+
+
+    public function option()
+    {
+        return $this->belongsTo('App\option');
+    }
 }

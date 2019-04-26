@@ -96,7 +96,7 @@
                     <div class="products text-center">
                         @foreach ($products as $product )
                               <div class="product">
-                                    <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                                    <a href="{{route('product.show',$product->id)}}"><img src={{$product->images[0]}} alt="product"></a>
                               <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
                               <div class="product-price">{{$product->price}}$</div>
                               </div>
@@ -124,7 +124,7 @@
                 @foreach ($_products as $product )
 
             <div class="product">
-                <a href="{{route('product.show',$product->id)}}"><img src={{$product->_tags['img_path'][0]}} alt="product"></a>
+                <a href="{{route('product.show',$product->id)}}"><img src={{$product->images[0]}} alt="product"></a>
                 <a href="{{route('product.show',$product->id)}}"><div class="product-name">{{ $product->title}}</div></a>
                 <div class="product-price">{{ $product->title}}$</div>
             </div>
