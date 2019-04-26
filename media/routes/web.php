@@ -52,4 +52,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
+    Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
+    Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
+
 });

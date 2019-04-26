@@ -64,6 +64,27 @@
                         </ul>
                     </li>
                   
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>shipper</a>
+                        <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{route('admin.shipper')}}">View</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Add</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Edit</a></li>
+
+                        </ul>
+                    </li>
+                  
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>penaltys</a>
+                        <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{route('admin.penaltys')}}">View</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Add</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Edit</a></li>
+
+                        </ul>
+                    </li>
+
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
