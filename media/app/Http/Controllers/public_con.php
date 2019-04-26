@@ -12,8 +12,9 @@ class public_con extends Controller
 
         $products = products::inRandomOrder()->take(8)->get();
         $_products = products::inRandomOrder()->take(4)->get();
-
-        return view("home")->with('products', $products)->with('_products', $_products);
+        $Megaseason=products::inRandomOrder()->take(6)->get();
+        $BigMega=products::inRandomOrder()->firstorfail();
+        return view("home")->with('products', $products)->with('_products', $_products)->with('Megaseason',$Megaseason)->with('BigMega',$BigMega);
     }
 
 
@@ -55,20 +56,22 @@ class public_con extends Controller
 
     public function books()
     {
-        return view("books");
+        $products = products::where('categories_id', 2)->inRandomOrder()->take(9)->get();
+
+
+        return view("books")->with('products', $products);
     }
 
 
     public function movies()
     {
-        return view("movies");
+        $products = products::where('categories_id', 1)->inRandomOrder()->take(12)->get();
+
+        return view("movies")->with('products', $products);
     }
 
 
-    public function inscription()
-    {
-        return view("inscription");
-    }
+
 
 
     public function magazins()
@@ -79,14 +82,14 @@ class public_con extends Controller
 
     public function journal()
     {
+
+        $products = products::inRandomOrder()->take(12)->get();
+
         return view("journal");
     }
 
 
-    public function cart()
-    {
-        return view("cart");
-    }
+
 
 
     public function shop()
@@ -96,13 +99,8 @@ class public_con extends Controller
         return view("shop")->with('products', $products);
     }
 
-
-
     public function test()
     {
-        $products = products::inRandomOrder()->take(12)->get();
-
-
-        return view("test")->with('products', $products);
+        return view('test');
     }
 }

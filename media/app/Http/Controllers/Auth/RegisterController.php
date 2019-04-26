@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Users;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,6 +52,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'City' => ['required', 'string'],
+            'Adresse' => ['required', 'string'],
+            'Code_postale' => ['required', 'string'],
         ]);
     }
 
@@ -59,14 +62,31 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Users
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Users::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'City' => $data['City'],
+            'Adresse' => $data['Adresse'],
+            'Code_postale' => $data['Code_postale'],
+            'Sub_id' => $data['Sub_id'],
         ]);
+    }
+
+    // for user experience we redirect the user to the same page page he was in beffore login
+    public function showLoginForm()
+    {
+        session()->put('previousUrl', url()->previous());
+
+        return view('auth.login');
+    }
+
+    public function redirectTo()
+    {
+        return str_replace(url('/'), '', session()->get('previousUrl', '/'));
     }
 }

@@ -16,27 +16,43 @@
 Route::get('/', function () {
     return view('welcome');
 });*/
-
+Route::get('/chekout', 'chekout_con@index')->middleware('auth');
+Route::post('/chekout', 'chekout_con@store')->name('chekout.store');
+Route::get('/guestchekout', 'chekout_con@index')->name('guestchekout');
+Route::resource('/wish', 'wish_con');
+Route::resource('/shop', 'shop_con');
 Route::get('/test', 'public_con@test');
 Route::resource('/product', 'products_con');
 Route::resource('/user', 'user_con');
 Route::get('/categories', 'public_con@categories');
-
-Route::get('/chekout', 'user_con@chekout');
-Route::get('/cart', 'public_con@cart');
+Route::resource('/cart', 'cart_con');
 Route::get('/', 'public_con@index');
 Route::get('/about', 'public_con@about');
 Route::get('/contact', 'public_con@contact');
-Route::get('/shop', 'public_con@shop')->name('shop.index');;
 Route::get('/event', 'public_con@event');
 Route::get('/hadik', 'public_con@hadik');
 Route::get('/acount', 'public_con@acount');
-Route::get('/categories/movies', 'public_con@movies');
-Route::get('/categories/books', 'public_con@books');
-Route::get('/inscription', 'public_con@inscription');
-Route::get('/categories/journal', 'public_con@journal');
-Route::get('/categories/magazins', 'public_con@magazins');
-Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('user/{userid}/{name}', 'user_con@index');
-});
+Route::get('/categories/movies', 'public_con@movies')->name('movies');
+Route::get('/categories/books', 'public_con@books')->name('books');
+Route::get('/categories/journal', 'public_con@journal')->name('journal');
+Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
+Route::get('/login', 'Sessionscontroller@create');
+Route::get('/logout', 'Sessionscontroller@create');
+
 // test
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//admin pages 
+//pages 
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
+    Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
+    Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
+
+});

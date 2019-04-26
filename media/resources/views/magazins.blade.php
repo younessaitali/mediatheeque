@@ -1,5 +1,5 @@
-@extends('layouts.nav_bar')
+@extends('layouts.product')
 @section('content')
-<h1>Magazins</h1>  
+<h1>magazins</h1>  
   
 @endsection
