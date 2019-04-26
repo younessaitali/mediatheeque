@@ -12,7 +12,7 @@
                             <div class="hero-buttons">
                                 <a href="/categories/movies" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
                                 <a href="/categories/books" class="button button-white"><span class="fa fa-book" ></span>Books</a>
-                                <a href="/categories/magazins" class="button button-white"><i class="fa fa-newspaper"></i>Magazins</a>
+                                <a href="/categories/magazins" class="button button-white"><i class="fa fa-newspaper-o"></i>Magazins</a>
                                 <a href="/categories/journal" class="button button-white"><span class="fa  fa-newspaper-o" ></span>Journal</a>
                             </div>
                         </div> <!-- end categorys -->
@@ -29,8 +29,8 @@
             <h1>Mega season sale</h1>
             <div class="product-photos container">
                  <div class="big-image">
-                     <img src="img/books/3.jpg"></img>
-                     <div class="description"> 
+                    <a href="{{route('product.show',$BigMega->id)}}"><img src={{$BigMega->images[0]}} alt="product"></a>
+                    <div class="description"> 
                          <h2>   </h2>
                          <a href="#"><h3></h3></a>
                      </div><!-- end description -->
@@ -39,42 +39,14 @@
                  <div class="p_6x6 container">
                      <h2></h2>
                      <div class="photo6x6 container">
-                         <div class="photo">
-                             <a href="#">
-                                 <img src="img/books/2.jpg"></img>
-                                 <h3></h3>
-                             </a>
-                         </div><!-- end photo_1 -->
-                         <div class="photo">
-                                <a href="#">
-                                        <img src="img/books/4.jpg"></img>
-                                        <h3></h3>
-                                    </a>
-                         </div><!-- end photo_2 -->
-                         <div class="photo">
-                                <a href="#">
-                                        <img src="img/books/5.jpg"></img>
-                                        <h3></h3>
-                                    </a>
-                         </div><!-- end photo_3 -->
-                         <div class="photo">
-                                <a href="#">
-                                        <img src="img/books/6.jpg"></img>
-                                        <h3></h3>
-                                    </a>
-                         </div><!-- end photo_4 -->
-                         <div class="photo">
-                                <a href="#">
-                                        <img src="img/books/7.jpg"></img>
-                                        <h3></h3>
-                                    </a>
-                         </div><!-- end photo_5 -->
-                         <div class="photo">
-                                <a href="#">
-                                        <img src="img/books/8.jpg"></img>
-                                        <h3></h3>
-                                    </a>
-                         </div><!-- end photo_6 -->
+                        @foreach ($Megaseason as $Megaseason)
+                        <div class="photo">
+                            <a href="{{route('product.show',$Megaseason->id)}}"><img src={{$Megaseason->images[0]}} alt="product"></a>
+                            <a href="{{route('product.show',$Megaseason->id)}}"><div class="product-name">{{ $Megaseason->title}}</div></a>
+                            <div class="product-price">{{$Megaseason->price}}$</div>
+                        </div><!-- end photo_6 --> 
+                        @endforeach
+
                      </div><!-- end photo6x6  -->
                 
                 </div> <!-- end p_6x6 containe -->
