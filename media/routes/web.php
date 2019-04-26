@@ -51,5 +51,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 //pages 
 
 Route::group(['prefix' => 'admin'], function () {
+
+    //categorie
     Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
+    Route::delete('/categories/{id}', 'admin_categories_controller@destroy')->name('admin.categorie.delet');
+    Route::GET('/categories/{id}/edite', 'admin_categories_controller@edit')->name('admin.categorie.edite');
+    Route::Patch('/categories/{id}', 'admin_categories_controller@update')->name('admin.categorie.update');
+    Route::GET('/categories/create', 'admin_categories_controller@create')->name('admin.categorie.create');
+    Route::POST('/categories', 'admin_categories_controller@store')->name('admin.categorie.store');
 });

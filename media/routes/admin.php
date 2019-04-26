@@ -37,8 +37,6 @@ Route::get('/role/{role}/edit', 'RoleController@edit')->name('admin.role.edit');
 Route::patch('/role/{role}', 'RoleController@update')->name('admin.role.update');
 
 
-//pages 
-Route::get('/categories', 'categories_controller@index')->name('admin.categorie');
 
 
 

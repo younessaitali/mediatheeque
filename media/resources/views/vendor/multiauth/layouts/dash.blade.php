@@ -58,8 +58,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Categories</a>
                         <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-fort-awesome"></i><a href="{{route('admin.categorie')}}">View</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Add</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Edit</a></li>
+                        <li><i class="menu-icon ti-themify-logo"></i><a href="{{route('admin.categorie.create')}}">Add</a></li>
 
                         </ul>
                     </li>
