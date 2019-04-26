@@ -44,3 +44,12 @@ Route::get('/logout', 'Sessionscontroller@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//admin pages 
+//pages 
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
+});
