@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\shipper;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class admin_shippers_controller extends Controller
+class admin_product_controller extends Controller
 {
 
 
@@ -16,8 +14,6 @@ class admin_shippers_controller extends Controller
         $this->middleware('role:super', ['only' => 'show']);
     }
 
-
-
     /**
      * Display a listing of the resource.
      *
@@ -26,9 +22,7 @@ class admin_shippers_controller extends Controller
     public function index()
     {
 
-        $shipper = shipper::all();
-
-        return view('vendor.multiauth.admin.pages.shipper.index')->with('shipper', $shipper);
+        return view("vendor.multiauth.admin.pages.product.index");
     }
 
     /**
@@ -38,7 +32,7 @@ class admin_shippers_controller extends Controller
      */
     public function create()
     {
-        return view('vendor.multiauth.admin.pages.shipper.create');
+        //
     }
 
     /**
@@ -49,15 +43,7 @@ class admin_shippers_controller extends Controller
      */
     public function store(Request $request)
     {
-        shipper::create([
-            'phone' => $request->phone,
-            'c_name' => $request->c_name,
-            'adresse' => $request->adress,
-            'id_id' => $request->id_id,
-        ]);
-        $shipper = shipper::all();
-
-        return view('vendor.multiauth.admin.pages.shipper.index')->with('shipper', $shipper);
+        //
     }
 
     /**
@@ -79,8 +65,7 @@ class admin_shippers_controller extends Controller
      */
     public function edit($id)
     {
-        $shipper = shipper::where('id', $id)->firstorfail();
-        return view('vendor.multiauth.admin.pages.shipper.edite')->with('shipper', $shipper);
+        //
     }
 
     /**
@@ -92,15 +77,7 @@ class admin_shippers_controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $shipper = shipper::find($id);
-        $shipper->c_name = $request->c_name;
-        $shipper->adresse = $request->adress;
-        $shipper->phone = $request->phone;
-        $shipper->save();
-
-        $shipper = shipper::all();
-
-        return view('vendor.multiauth.admin.pages.shipper.index')->with('shipper', $shipper);
+        //
     }
 
     /**
@@ -111,7 +88,6 @@ class admin_shippers_controller extends Controller
      */
     public function destroy($id)
     {
-        shipper::where('id', $id)->delete();
-        return back();
+        //
     }
 }

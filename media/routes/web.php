@@ -47,12 +47,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-//admin pages 
-//pages 
+//admin pages------------------admin pages-------------admin pages-----------admin pages 
+//pages -----------pages---------------pages----------pages---------------pages
 
 Route::group(['prefix' => 'admin'], function () {
 
-    //categorie
+    //categorie--------------categorie------------categorie
     Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
     Route::delete('/categories/{id}', 'admin_categories_controller@destroy')->name('admin.categorie.delet');
     Route::GET('/categories/{id}/edite', 'admin_categories_controller@edit')->name('admin.categorie.edite');
@@ -61,7 +61,24 @@ Route::group(['prefix' => 'admin'], function () {
     Route::POST('/categories', 'admin_categories_controller@store')->name('admin.categorie.store');
 
 
-
+    //shippers---------------shippers-----------------shippers
     Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
+    Route::delete('/shippers/{id}', 'admin_shippers_controller@destroy')->name('admin.shipper.delet');
+    Route::GET('/shippers/{id}/edite', 'admin_shippers_controller@edit')->name('admin.shipper.edite');
+    Route::Patch('/shippers/{id}', 'admin_shippers_controller@update')->name('admin.shipper.update');
+    Route::GET('/shippers/create', 'admin_shippers_controller@create')->name('admin.shipper.create');
+    Route::POST('/shippers', 'admin_shippers_controller@store')->name('admin.shipper.store');
+
+
+
+    //penaltys----------penaltys--------------------penaltys----------------penaltys
     Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
+    Route::delete('/panaltys/{id}', 'admin_penaltys_controller@destroy')->name('admin.penaltys.delet');
+    Route::GET('/panaltys/{id}/edite', 'admin_penaltys_controller@edit')->name('admin.penaltys.edite');
+    Route::Patch('/panaltys/{id}', 'admin_penaltys_controller@update')->name('admin.penaltys.update');
+    Route::GET('/panaltys/create', 'admin_penaltys_controller@create')->name('admin.penaltys.create');
+    Route::POST('/panaltys', 'admin_penaltys_controller@store')->name('admin.penaltys.store');
+
+    //product------------product----------product---------------
+    Route::get('/product', 'admin_product_controller@index')->name('admin.product');
 });

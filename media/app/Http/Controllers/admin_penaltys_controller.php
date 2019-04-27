@@ -28,7 +28,7 @@ class admin_penaltys_controller extends Controller
 
         $penaltys = penaltys::all();
 
-        return view('vendor.multiauth.admin.pages.penaltys.index')->with('penaltys', $penaltys);
+        return view('vendor.multiauth.admin.pages.penaltys.index', compact('penaltys'));
     }
 
     /**
@@ -38,7 +38,7 @@ class admin_penaltys_controller extends Controller
      */
     public function create()
     {
-        //
+        return view('vendor.multiauth.admin.pages.penaltys.create');
     }
 
     /**
@@ -48,9 +48,7 @@ class admin_penaltys_controller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
+    { }
 
     /**
      * Display the specified resource.
@@ -71,7 +69,8 @@ class admin_penaltys_controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $penaltys = penaltys::where('id', $id)->firstorfail();
+        return view('vendor.multiauth.admin.pages.penaltys.edite')->with('penaltys', $penaltys);
     }
 
     /**
@@ -83,7 +82,15 @@ class admin_penaltys_controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $penaltys = penaltys::find($id);
+        $penaltys->id_category =  $penaltys->id_category;
+        $penaltys->penalty = $request->penaltys;
+
+        $penaltys->save();
+
+        $penaltys = penaltys::all();
+
+        return view('vendor.multiauth.admin.pages.penaltys.index')->with('penaltys', $penaltys);
     }
 
     /**
@@ -94,6 +101,7 @@ class admin_penaltys_controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        penaltys::where('id', $id)->delete();
+        return back();
     }
 }
