@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
-
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Cartalyst\Stripe\Exception\CardErrorException;
 use Illuminate\Http\Request;
+use App\users;
+
 
 class chekout_con extends Controller
 {
@@ -15,7 +18,12 @@ class chekout_con extends Controller
      */
     public function index()
     {
-        return view('chekout');
+        $user = users::find(auth()->id());
+        if ($user->Sub_id != null) {
+            return redirect()->route('invoice')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+        } else {
+            return view('chekout');
+        }
     }
 
     /**
@@ -36,7 +44,32 @@ class chekout_con extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+
+
+        $contents = Cart::content()->map(function ($item) {
+            return $item->model->slug . ', ' . $item->qty;
+        })->values()->toJson();
+
+        try {
+            $charge = Stripe::charges()->create([
+                'amount' => Cart::total(),
+                'currency' => 'USD',
+                'source' => $request->stripeToken,
+                'description' => 'Order',
+                'receipt_email' => $request->email,
+                'metadata' => [
+                    'contents' => $contents,
+                    'quantity' => Cart::instance('default')->count(),
+                ],
+            ]);
+            Cart::instance('default')->destroy();
+            return redirect()->route('invoice')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+        } catch (CardErrorException $e) {
+            // return back()->withErrors('Error! ' . $e->getMessage());
+        }
+
+
+        // dd($request->all());
     }
 
     /**

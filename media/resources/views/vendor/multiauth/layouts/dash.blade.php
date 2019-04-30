@@ -88,7 +88,7 @@
                     </li>
 
                     <li class="active">
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Add Product </a>
+                        <a href="{{route('admin.product.create')}}"> <i class="menu-icon ti-email"></i>Add Product </a>
                     </li>
 
 
@@ -201,7 +201,7 @@
             });
         })(jQuery);
     </script>
-
+    @yield('extra-js')
 
 </body>
 

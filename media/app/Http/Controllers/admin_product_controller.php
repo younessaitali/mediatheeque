@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\products;
 use Illuminate\Http\Request;
+use function GuzzleHttp\json_encode;
 
 class admin_product_controller extends Controller
 {
@@ -21,8 +23,8 @@ class admin_product_controller extends Controller
      */
     public function index()
     {
-
-        return view("vendor.multiauth.admin.pages.product.index");
+        $product = products::all();
+        return view("vendor.multiauth.admin.pages.product.index")->with('product', $product);
     }
 
     /**
@@ -32,7 +34,7 @@ class admin_product_controller extends Controller
      */
     public function create()
     {
-        //
+        return view("vendor.multiauth.admin.pages.product.create");
     }
 
     /**
@@ -43,7 +45,48 @@ class admin_product_controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            // 'title'         => 'required',
+            // 'description'   => 'required',
+            //  'price'         => 'required',
+            //  'promo_price'   => 'required',
+            //'categories_id' => 'required',
+            //  'photos'        => 'required',
+            //'photos.*'        => 'image|mimes:jpeg,png,jpg,gif,svg'
+            //   'option_id'     => 'required',
+            //   'quantity'      => 'required',
+            //  'tags'          => 'required',
+        ]);
+        $i = 0;
+        $images = array();
+        if ($request->hasfile('photos')) {
+            foreach ($request->file('photos') as $photo) {
+                // $photo->move('/img');
+                $filename = $photo->getClientOriginalName();
+                $photo->move(public_path() . '/img/', $filename);
+                $images[$i] = $filename;
+                $i++;
+            }
+        }
+        // $images = json_encode($request->photos);
+
+        $tags = json_encode($request->tags);
+        //  return var_dump($images);
+
+        products::create([
+            'title'         =>  $request->title,
+            'description'   =>  $request->description,
+            'price'         =>  $request->price,
+            'promo_price'   =>  $request->promo_price,
+            'categories_id' =>  $request->categories_id,
+            'images'        =>  $images,
+            'option_id'     =>  $request->option_id,
+            'stars'         => 5,
+            'quantity'      =>  $request->quantity,
+            'tags'          =>  $tags,
+            'disp'          => 1,
+            'mult'          => 0,
+        ]);
     }
 
     /**

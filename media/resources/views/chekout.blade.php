@@ -133,23 +133,6 @@
     
                 </form>
     
-                                    <div class="mt-32">or</div>
-                    <div class="mt-32">
-                        <h2>Pay with PayPal</h2>
-    
-                        <form method="post" id="paypal-payment-form" action="">
-                            <!-- !!!!  -->                            
-                            <section>
-                                <div class="bt-drop-in-wrapper">
-                                    <div id="bt-dropin"></div>
-                                </div>
-                            </section>
-    
-                            <input id="nonce" name="payment_method_nonce" type="hidden" />
-                            <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
-                        </form>
-                    </div>
-                            </div>
     
     
     
@@ -245,6 +228,8 @@
             var form = document.getElementById('payment-form');
             form.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            document.getElementById('complete-order').disabled =true;
 
             stripe.createToken(card).then(function(result) {
                 if (result.error) {

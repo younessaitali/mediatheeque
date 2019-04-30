@@ -38,6 +38,7 @@ Route::get('/categories/journal', 'public_con@journal')->name('journal');
 Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
 Route::get('/login', 'Sessionscontroller@create');
 Route::get('/logout', 'Sessionscontroller@create');
+Route::get('/invoice', 'public_con@invoice')->name('invoice');
 
 // test
 
@@ -46,7 +47,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
+Route::post('/sjkghd', 'public_con@test2')->name('test');
 //admin pages------------------admin pages-------------admin pages-----------admin pages 
 //pages -----------pages---------------pages----------pages---------------pages
 
@@ -81,4 +82,9 @@ Route::group(['prefix' => 'admin'], function () {
 
     //product------------product----------product---------------
     Route::get('/product', 'admin_product_controller@index')->name('admin.product');
+    Route::delete('/product/{id}', 'admin_product_controller@destroy')->name('admin.product.delet');
+    Route::GET('/product/{id}/edite', 'admin_product_controller@edit')->name('admin.product.edite');
+    Route::Patch('/product/{id}', 'admin_product_controller@update')->name('admin.product.update');
+    Route::GET('/product/create', 'admin_product_controller@create')->name('admin.product.create');
+    Route::POST('/product', 'admin_product_controller@store')->name('admin.product.store');
 });
