@@ -112,18 +112,7 @@
 
 
                   
-      {{--  
-                    <div class="half-form">
-  
-                        <div class="form-group">
-                            <label for="expiry">Expiry</label>
-                            <input type="text" class="form-control" id="expiry" name="expiry" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="cvc">CVC Code</label>
-                            <input type="text" class="form-control" id="cvc" name="cvc" value="">
-                        </div>
-                    </div>--}}
+
                     <br><br>
                     <div class="spacer"></div>
                     <div class="spacer"></div>

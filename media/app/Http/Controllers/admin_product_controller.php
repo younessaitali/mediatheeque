@@ -64,7 +64,7 @@ class admin_product_controller extends Controller
                 // $photo->move('/img');
                 $filename = $photo->getClientOriginalName();
                 $photo->move(public_path() . '/img/', $filename);
-                $images[$i] = $filename;
+                $images[$i] = '/img/' . $filename;
                 $i++;
             }
         }
