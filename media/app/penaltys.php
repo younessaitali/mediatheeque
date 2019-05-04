@@ -9,6 +9,6 @@ class penaltys extends Model
 
     public function categorie()
     {
-        return $this->belongsTo('App\categorie');
+        return $this->belongsTo('App\categorie', 'id');
     }
 }

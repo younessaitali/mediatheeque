@@ -246,6 +246,8 @@
             form.addEventListener('submit', function(event) {
             event.preventDefault();
 
+            document.getElementById('complete-order').disabled =true;
+
             stripe.createToken(card).then(function(result) {
                 if (result.error) {
                 // Inform the user if there was an error.

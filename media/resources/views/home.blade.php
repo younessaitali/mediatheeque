@@ -1,7 +1,9 @@
 
 @extends('layouts.nav_bar')
 
+@section('extra')
 
+@endsection
 @section('hero_container')
     
 
@@ -18,7 +20,28 @@
                         </div> <!-- end categorys -->
                 
                         <div class="ac-image">
-                            <img src="img/test.png" alt="hero image">
+                            <a name="slide_href"> <img  name="slide"  alt="hero image"  width="1480" height="720" ></a> 
+
+
+
+                           {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+
+                                    @foreach ($slide as $item)
+                                        
+                                    
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src={{$item->images[0]}} alt="First slide"   width="1480" height="720">
+                                  </div>
+                                 
+
+                                  @endforeach
+                                </div>
+                              </div> --}}
+
+
+
+
                         </div>
                     </div> <!-- end hero -->
 @endsection
@@ -282,6 +305,49 @@
                     </div><br><br><br>
                         <div class="clear"></div>
                         <br><br>
+            </div>
+        </div>
+        @endsection
+
+
+
+        @section('extra-js')
+            <script>
+            
+                // var i = 0;
+                // var j = 0; 			
+                // var images = [];	
+                // var slide_url =[];
+                // var time = 3000;	
+
+                // @foreach ($slide as $item)
+               
+                // images[j] = {{$item->images[0]}};
+                // slide_url[j] = {{route('product.show',$item->id)}}
+                // j++;
+                // @endforeach
+                
+                // function changeImg(){
+                // 	document.slide.src = images[i];
+                //     document.slide_href.href = images[i];
+                
+                // 	if(i < images.length - 1){
+                	  
+                // 	  i++; 
+                // 	} else { 
+                		
+                // 		i = 0;
+                // 	}
+                
+                	
+                // 	setTimeout("changeImg()", time);
+                // }
+
+               
+                // window.onload=changeImg;
+            
+            
+            </script>
         @endsection
 
 

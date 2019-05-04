@@ -38,6 +38,7 @@ Route::get('/categories/journal', 'public_con@journal')->name('journal');
 Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
 Route::get('/login', 'Sessionscontroller@create');
 Route::get('/logout', 'Sessionscontroller@create');
+Route::get('/invoice', 'public_con@invoice')->name('invoice');
 
 // test
 
@@ -46,13 +47,44 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-//admin pages 
-//pages 
+Route::post('/sjkghd', 'public_con@test2')->name('test');
+//admin pages------------------admin pages-------------admin pages-----------admin pages 
+//pages -----------pages---------------pages----------pages---------------pages
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
-    Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
-    Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
 
+    //categorie--------------categorie------------categorie
+    Route::get('/categories', 'admin_categories_controller@index')->name('admin.categorie');
+    Route::delete('/categories/{id}', 'admin_categories_controller@destroy')->name('admin.categorie.delet');
+    Route::GET('/categories/{id}/edite', 'admin_categories_controller@edit')->name('admin.categorie.edite');
+    Route::Patch('/categories/{id}', 'admin_categories_controller@update')->name('admin.categorie.update');
+    Route::GET('/categories/create', 'admin_categories_controller@create')->name('admin.categorie.create');
+    Route::POST('/categories', 'admin_categories_controller@store')->name('admin.categorie.store');
+
+
+    //shippers---------------shippers-----------------shippers
+    Route::get('/shippers', 'admin_shippers_controller@index')->name('admin.shipper');
+    Route::delete('/shippers/{id}', 'admin_shippers_controller@destroy')->name('admin.shipper.delet');
+    Route::GET('/shippers/{id}/edite', 'admin_shippers_controller@edit')->name('admin.shipper.edite');
+    Route::Patch('/shippers/{id}', 'admin_shippers_controller@update')->name('admin.shipper.update');
+    Route::GET('/shippers/create', 'admin_shippers_controller@create')->name('admin.shipper.create');
+    Route::POST('/shippers', 'admin_shippers_controller@store')->name('admin.shipper.store');
+
+
+
+    //penaltys----------penaltys--------------------penaltys----------------penaltys
+    Route::get('/panaltys', 'admin_penaltys_controller@index')->name('admin.penaltys');
+    Route::delete('/panaltys/{id}', 'admin_penaltys_controller@destroy')->name('admin.penaltys.delet');
+    Route::GET('/panaltys/{id}/edite', 'admin_penaltys_controller@edit')->name('admin.penaltys.edite');
+    Route::Patch('/panaltys/{id}', 'admin_penaltys_controller@update')->name('admin.penaltys.update');
+    Route::GET('/panaltys/create', 'admin_penaltys_controller@create')->name('admin.penaltys.create');
+    Route::POST('/panaltys', 'admin_penaltys_controller@store')->name('admin.penaltys.store');
+
+    //product------------product----------product---------------
+    Route::get('/product', 'admin_product_controller@index')->name('admin.product');
+    Route::delete('/product/{id}', 'admin_product_controller@destroy')->name('admin.product.delet');
+    Route::GET('/product/{id}/edite', 'admin_product_controller@edit')->name('admin.product.edite');
+    Route::Patch('/product/{id}', 'admin_product_controller@update')->name('admin.product.update');
+    Route::GET('/product/create', 'admin_product_controller@create')->name('admin.product.create');
+    Route::POST('/product', 'admin_product_controller@store')->name('admin.product.store');
 });
