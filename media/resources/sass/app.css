@@ -434,8 +434,9 @@ h1.checkout-heading {
       grid-template-rows: 720px;
 }
 
-.hero .ac-image {
-  background-color: #FF2162;
+.hero .carousel_slide {
+  display: -ms-grid;
+  display: grid;
 }
 
 .hero .categorys {

@@ -1,5 +1,6 @@
 
 @extends('layouts.nav_bar')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
 @section('hero_container')
@@ -17,23 +18,41 @@
                             </div>
                         </div> <!-- end categorys -->
                 
-                        <div class="ac-image">
-                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src={{$product->images[0]}} alt="product"></a>
-                                                </div>
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Next</span>
-                                        </a>
-                                      </div>
+                        
+
+                        <div id="myCarousel" class="carousel_slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    @for ($i = 0; $i < 4; $i++)
+                                    <li data-target="#myCarousel" data-slide-to= ''$i'' class="active"></li>
+                                    @endfor
+                                </ol>
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                  @foreach ($carousel as $carousel)
+                                  <div class="item">
+                                        <img src={{$carousel->images[0]}}>
+                                    </div>
+                                  @endforeach
+                                    
+                                </div>
+                            
                         </div>
+                              
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+
+
+                        
                     </div> <!-- end hero -->
 @endsection
 

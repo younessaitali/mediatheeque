@@ -12,9 +12,10 @@ class public_con extends Controller
 
         $products = products::inRandomOrder()->take(8)->get();
         $_products = products::inRandomOrder()->take(4)->get();
+        $carousel=products::inRandomOrder()->take(4)->get();
         $Megaseason=products::inRandomOrder()->take(6)->get();
         $BigMega=products::inRandomOrder()->firstorfail();
-        return view("home")->with('products', $products)->with('_products', $_products)->with('Megaseason',$Megaseason)->with('BigMega',$BigMega);
+        return view("home")->with('products', $products)->with('_products', $_products)->with('Megaseason',$Megaseason)->with('BigMega',$BigMega)->with('carousel',$carousel);
     }
 
 

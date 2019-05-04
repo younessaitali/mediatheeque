@@ -433,8 +433,10 @@ h1.checkout-heading {
       grid-template-rows: 720px;
 }
 
-.hero .ac-image {
-  background-color: #FF2162;
+.hero .carousel-inner > .item > img,
+.hero .carousel-inner > .item > a > img {
+  width: 20%;
+  margin: auto;
 }
 
 .hero .categorys {

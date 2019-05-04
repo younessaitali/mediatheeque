@@ -4,11 +4,13 @@
     grid-template-columns: 1fr 4fr;
     grid-gap: 40px;
     grid-template-rows: 720px;
+      
+    .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 20%;
+    margin: auto;
+  }
     
-    .ac-image{
-        
-        background-color: #FF2162;
-    }
     .categorys{
         display: flex;
         flex-direction: column;
