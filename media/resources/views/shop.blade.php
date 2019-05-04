@@ -56,7 +56,10 @@
 
                     <div class="spacer"></div>
                     {{ $products->appends(request()->input())->links() }}
+            </div>
+        </div>
 @endsection
+
 
 @section('extra-js')
    

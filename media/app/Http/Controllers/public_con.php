@@ -14,7 +14,8 @@ class public_con extends Controller
         $_products = products::inRandomOrder()->take(4)->get();
         $Megaseason = products::inRandomOrder()->take(6)->get();
         $BigMega = products::inRandomOrder()->firstorfail();
-        return view("home")->with('products', $products)->with('_products', $_products)->with('Megaseason', $Megaseason)->with('BigMega', $BigMega);
+        $slide = products::inRandomOrder()->take(3)->get();
+        return view("home")->with('products', $products)->with('_products', $_products)->with('Megaseason', $Megaseason)->with('BigMega', $BigMega)->with('slide', $slide);
     }
 
 

@@ -1,13 +1,27 @@
-#page-container {
-    position: relative;
-    min-height: 100vh;
-  }
+// #page-container {
+//     position: relative;
+//     min-height: 100vh;
+//   }
   #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
+    padding-bottom: 40rem;    /* Footer height */
   }
   #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 2.5rem;            /* Footer height */
+  }
+  footer {
+    background: rgba(22, 22, 22, 0.719);
+    color: white;
+    padding: 40px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+
+    .heart {
+      color: white;
+    }
   }

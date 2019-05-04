@@ -112,7 +112,18 @@
 
 
                   
-
+      {{--  
+                    <div class="half-form">
+  
+                        <div class="form-group">
+                            <label for="expiry">Expiry</label>
+                            <input type="text" class="form-control" id="expiry" name="expiry" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvc">CVC Code</label>
+                            <input type="text" class="form-control" id="cvc" name="cvc" value="">
+                        </div>
+                    </div>--}}
                     <br><br>
                     <div class="spacer"></div>
                     <div class="spacer"></div>
@@ -122,6 +133,23 @@
     
                 </form>
     
+                                    <div class="mt-32">or</div>
+                    <div class="mt-32">
+                        <h2>Pay with PayPal</h2>
+    
+                        <form method="post" id="paypal-payment-form" action="">
+                            <!-- !!!!  -->                            
+                            <section>
+                                <div class="bt-drop-in-wrapper">
+                                    <div id="bt-dropin"></div>
+                                </div>
+                            </section>
+    
+                            <input id="nonce" name="payment_method_nonce" type="hidden" />
+                            <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
+                        </form>
+                    </div>
+                            </div>
     
     
     
