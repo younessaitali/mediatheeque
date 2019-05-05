@@ -38,7 +38,9 @@ Route::get('/categories/journal', 'public_con@journal')->name('journal');
 Route::get('/categories/magazins', 'public_con@magazins')->name('magazins');
 Route::get('/login', 'Sessionscontroller@create');
 Route::get('/logout', 'Sessionscontroller@create');
-Route::get('/invoice', 'public_con@invoice')->name('invoice');
+Route::get('/facture', 'public_con@invoice')->name('invoice');
+Route::resource('/invoices', 'invoice_con');
+
 
 // test
 

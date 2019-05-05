@@ -12,10 +12,10 @@
                                 
                             <h1><a href="/categories">Categories</a></h1>
                             <div class="hero-buttons">
-                                <a href="/categories/movies" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
-                                <a href="/categories/books" class="button button-white"><span class="fa fa-book" ></span>Books</a>
-                                <a href="/categories/magazins" class="button button-white"><i class="fa fa-newspaper-o"></i>Magazins</a>
-                                <a href="/categories/journal" class="button button-white"><span class="fa  fa-newspaper-o" ></span>Journal</a>
+                                <a href="{{route('shop.index',['category'=>1])}}" class="button button-white"><span class="fa fa-film" ></span>Movies</a>
+                                <a href="{{route('shop.index',['category'=>2])}}" class="button button-white"><span class="fa fa-book" ></span>Books</a>
+                                <a href="{{route('shop.index',['category'=>3])}}" class="button button-white"><i class="fa fa-newspaper-o"></i>Magazins</a>
+                                <a href="{{route('shop.index',['category'=>4])}}" class="button button-white"><span class="fa  fa-newspaper-o" ></span>Journal</a>
                             </div>
                         </div> <!-- end categorys -->
                 
@@ -79,7 +79,7 @@
                                         
                                     
                                 <div class="carousel-item @if($loop->first) active @endif">
-                                  <img class="d-block w-100" src={{$item->images[0]}} alt="First slide"   width="1480" height="720">
+                                 <a href="{{route('product.show',$item->id)}}"> <img class="d-block w-100" src={{$item->images[0]}} alt="First slide"   width="1480" height="720"></a>
                                 </div>
                                
 

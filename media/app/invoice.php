@@ -22,4 +22,8 @@ class invoice extends Model
     {
         return $this->belongsTo('App\orders');
     }
+
+    protected $fillable = [
+        'admin_id', 'media_id', 'order_id', 'date',
+    ];
 }

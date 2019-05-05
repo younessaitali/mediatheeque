@@ -16,4 +16,8 @@ class orders extends Model
     {
         return $this->belongsTo('App\users');
     }
+
+    protected $fillable = [
+        'user_id', 'payment_id', 'order_date', 's_date', 'shipper_id', 'payment_date', 'status', 'discount'
+    ];
 }

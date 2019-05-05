@@ -20,4 +20,10 @@ class order_details extends Model
     {
         return $this->belongsTo('App\shipper');
     }
+
+    protected $fillable = [
+
+        'product_id', 'order_id', 'price', 'quantity', 'type', 'option_id', 'shipper_id', 'status'
+
+    ];
 }

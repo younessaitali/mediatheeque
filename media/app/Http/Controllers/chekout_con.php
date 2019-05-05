@@ -7,6 +7,12 @@ use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
 use Illuminate\Http\Request;
 use App\users;
+use App\payment;
+use App\orders;
+use App\order_details;
+use App\invoice;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class chekout_con extends Controller
@@ -47,7 +53,7 @@ class chekout_con extends Controller
 
 
         $contents = Cart::content()->map(function ($item) {
-            return $item->model->slug . ', ' . $item->qty;
+            return $item->model->id . ', ' . $item->qty;
         })->values()->toJson();
 
         try {
@@ -62,8 +68,60 @@ class chekout_con extends Controller
                     'quantity' => Cart::instance('default')->count(),
                 ],
             ]);
+
+            $payment = new payment();
+            $payment->type = 'visa';
+            $payment->granted = 1;
+            $payment->save();
+
+
+            if (Auth::check()) {
+
+                $order = new orders();
+                $order->user_id = auth()->id();
+                $order->payment_id = $payment->id;
+                $order->order_date = date("Y/m/d");
+                $order->s_date = date("Y/m/d");
+                $order->shipper_id = 1;
+                $order->payment_date = date("Y/m/d");
+                $order->status = 1;
+                $order->discount = 0;
+                $order->save();
+            } else {
+                $order = new orders();
+                $order->user_id = 6;
+                $order->payment_id = $payment->id;
+                $order->order_date = date("Y/m/d");
+                $order->s_date = date("Y/m/d");
+                $order->shipper_id = 1;
+                $order->payment_date = date("Y/m/d");
+                $order->status = 1;
+                $order->discount = 0;
+                $order->save();
+            }
+            foreach (Cart::content() as $item) {
+                order_details::create([
+                    'order_id' => $order->id,
+                    'product_id' => $item->model->id,
+                    'quantity' => $item->qty,
+                    'price' => $item->model->price,
+                    'type' => 'physical gadget',
+                    'option_id' => $item->options->option,
+                    'shipper_id' => 1,
+                    'status' => 1,
+                ]);
+            }
+            $invoice = new invoice();
+            $invoice->admin_id = 1;
+            $invoice->media_id = 1;
+            $invoice->order_id = $order->id;
+            $invoice->date = date("Y/m/d");
+            $invoice->save();
+
+
+
             Cart::instance('default')->destroy();
-            return redirect()->route('invoice')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+            return redirect()->route('invoices.show', $invoice->id);
         } catch (CardErrorException $e) {
             // return back()->withErrors('Error! ' . $e->getMessage());
         }
