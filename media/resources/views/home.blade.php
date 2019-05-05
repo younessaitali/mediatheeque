@@ -20,24 +20,84 @@
                         </div> <!-- end categorys -->
                 
                         <div class="ac-image">
-                            <a name="slide_href"> <img  name="slide"  alt="hero image"  width="1480" height="720" ></a> 
+                            {{-- <a name="slide_href"> <img  name="slide"  alt="hero image"  width="1480" height="720" ></a>  --}}
 
 
 
-                           {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
 
-                                    @foreach ($slide as $item)
-                                        
-                                    
-                                  <div class="carousel-item active">
-                                    <img class="d-block w-100" src={{$item->images[0]}} alt="First slide"   width="1480" height="720">
-                                  </div>
-                                 
 
+
+
+
+
+
+
+
+
+{{-- 
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ 
+                                <ol class="carousel-indicators">
+                                 @foreach( $slide as $photo )
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                                 @endforeach
+                                </ol>
+                               
+                                <div class="carousel-inner" role="listbox">
+                                  @foreach( $slide as $photo )
+                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                         <img class="d-block img-fluid" src="{{ $photo->images[0] }}" alt="{{ $photo->title }}">
+                                            <div class="carousel-caption d-none d-md-block">
+                                               <h3>{{ $photo->title }}</h3>
+                                               <p>{{ $photo->descriptoin }}</p>
+                                            </div>
+                                     </div>
                                   @endforeach
                                 </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
                               </div> --}}
+
+
+
+
+
+
+
+
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+
+
+                                @foreach ($slide as $item)
+                                        
+                                    
+                                <div class="carousel-item @if($loop->first) active @endif">
+                                  <img class="d-block w-100" src={{$item->images[0]}} alt="First slide"   width="1480" height="720">
+                                </div>
+                               
+
+                                @endforeach
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+                            
+                                    
+                              
 
 
 
@@ -312,7 +372,9 @@
 
 
         @section('extra-js')
+        <script src="{{ asset('js/app.js')}}"></script>
             <script>
+
             
                 // var i = 0;
                 // var j = 0; 			
