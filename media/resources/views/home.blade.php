@@ -196,7 +196,7 @@
             </div> <!-- end featured-section -->
 
 
-            <div class="caleb">
+            {{-- <div class="caleb">
                     <div class="ml-calendar">
                         <section class="calendar-left">
                             <div class="sidebar">
@@ -365,7 +365,7 @@
                     </div><br><br><br>
                         <div class="clear"></div>
                         <br><br>
-            </div>
+            </div> --}}
         </div>
         @endsection
 

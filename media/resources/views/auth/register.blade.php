@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.nav_bar')
 
 @section('content')
 <div class="container">
@@ -65,7 +65,7 @@
 
                         <div class="form-group row">
 
-                                <label for="adresse">Adresse:</label>
+                                <label for="adresse" class="col-md-4 col-form-label text-md-right">Adresse:</label>
 
 
                             <div class="col-md-6">
@@ -78,7 +78,7 @@
 
                         <div class="form-group row">
 
-                                <label for="city">City:</label>
+                                <label for="city" class="col-md-4 col-form-label text-md-right" >City:</label>
 
 
                             <div class="col-md-6">
@@ -92,7 +92,7 @@
 
                         <div class="form-group row">
 
-                                    <label for="code_p">Code Postale:</label>
+                                    <label for="code_p" class="col-md-4 col-form-label text-md-right" >Code Postale:</label>
 
 
                             <div class="col-md-6">
@@ -105,7 +105,7 @@
                         <div class="form-group row">
 
                                 <legend><span class="number">2</span>Subscription Field:</legend>
-                                <label for="sub_type">Subscription type:</label>
+                                <label for="sub_type" class="col-md-4 col-form-label text-md-right">Subscription type:</label>
 
                             <div class="col-md-6">
 

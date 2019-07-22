@@ -50,6 +50,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::post('/sjkghd', 'public_con@test2')->name('test');
+
 //admin pages------------------admin pages-------------admin pages-----------admin pages 
 //pages -----------pages---------------pages----------pages---------------pages
 

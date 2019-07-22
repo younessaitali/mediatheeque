@@ -33,7 +33,7 @@
                         </ul>
                         
                             <div class="icon">
-                            <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a>
+                            {{-- <a href="#"><span class="search" ><i class="fa fa-search" aria-hidden="true"></i></span></a> --}}
                             <a href="/cart"><span class="cart" >
                                 <i class="fa fa-shopping-cart" aria-hidden="true">
                                  @if (Cart::instance('default')->count() > 0)
